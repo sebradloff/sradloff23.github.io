@@ -1,0 +1,50 @@
+.nav{
+  	background: blue;
+  	border: 1px solid white;
+  	color: white;
+  	text-align: center;
+  	margin-top: 5px;
+  	margin-left: 1px;
+  	margin-right: 1px;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+  	padding-left: 2px;
+  	padding-right: 2px;
+}
+
+.nav li{
+	display: inline;
+	border: 2px solid red;
+	font-size: 20px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+ul.side_menu{
+	position: fixed;
+	margin-right: 0px;
+	right:0px;
+	top:50px;
+	list-style-type: none;
+}
+
+ul.paid_ads{
+	position: absolute;
+	margin-left: 0px;
+	left:0px;
+	top:50px;
+	list-style-type: none;
+
+}
+
+#username{
+	border: 1px solid white;
+	margin-right: 0px;
+	width:140px;
+	background-color: #FACC2E;
+}
+#password{
+	border: 1px solid white;
+	width:150px;
+	background-color: #FE642E;
+}
