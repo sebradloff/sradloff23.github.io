@@ -198,3 +198,22 @@ h4 {
   display: table;
   clear: both;
 }
+
+
+/* My changes */
+a:hover{
+  color: red;
+}
+@font-face {
+    font-family: 'EntypoRegular';
+    src: url('font/Entypo-webfont.eot');
+    src: url('font/Entypo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/Entypo-webfont.woff') format('woff'),
+         url('font/Entypo-webfont.ttf') format('truetype'),
+         url('font/Entypo-webfont.svg#EntypoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  h3{
+    font-family: 'Lato', Arial, sans-serif;
+  }
