@@ -1,6 +1,7 @@
 /* General Styles */
 body {
   background-color: rgb(241, 241, 241);
+  font-family: 'Lato', Arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.2em;
@@ -48,14 +49,18 @@ h4 {
 }
 
 /* Navigation */
-.nav li {
+nav li {
   float: left;
 }
-.nav li a {
+nav li a {
   color: #fff;
   margin: 0 10px;
   padding: 5px 10px;
   text-decoration: none;
+}
+
+nav li a:hover {
+  color: red;
 }
 
 .jump {
@@ -75,25 +80,25 @@ h4 {
 
 
 /* Header */
-#header {
+header {
   background-color: #009D92;
   padding: 10px;
 }
-#header h1 {
+header h1 {
   color: #FFEECC;
   background: url('../images/icons/it.png') no-repeat 0 50%;
   padding-left: 40px;
 }
-#header .nav {
+header .nav {
   float: right;
   font-size: 1.2em;
   margin-left: 20px;
 }
-#header .nav li {
+header .nav li {
   line-height: 75px;
 }
 
-#header:after {
+header:after {
   /* clearfix hack */
   content: "";
   display: table;
@@ -102,7 +107,7 @@ h4 {
 
 
 /* Main */
-#main div {
+#main section {
   margin-bottom: 1em;
   position: relative;
 }
@@ -121,7 +126,7 @@ h4 {
 
 
 /* Famous Women */
-#famous div.woman {
+#famous article.woman {
   background-color: white;
   float: left;
   min-height: 250px;
@@ -130,11 +135,11 @@ h4 {
   width: 27.33%;
 }
 
-#famous div.break {
+#famous article.break {
   clear: both;
 }
 
-#famous div img {
+#famous article img {
   display: block;
   margin: 1em auto;
   width: 100%;
@@ -144,6 +149,7 @@ h4 {
 /* Organizations */
 #organizations {
   clear: both;
+  height: 500px;
 }
 
 #organizations ul {
@@ -182,17 +188,17 @@ h4 {
 
 
 /* Footer */
-#footer {
+footer {
   background-color: #00665F;
 }
 
-#footer .nav {
+footer .nav {
   float: left;
   font-size: 1.1em;
   margin: 10px;
 }
 
-#footer:after {
+footer:after {
   /* clearfix hack */
   content: "";
   display: table;
@@ -215,17 +221,4 @@ a:hover{
     font-style: normal;
   }
   
-h3{
-    font-family: 'Lato', Arial, sans-serif;
-  }
 
-@media (max-width: 480px) {
-     
-    nav a{
-        float:left;
-        width:27%;
-        margin:0 1.7%;
-        padding:25px 2%;
-        margin-bottom:0;
-    }
-}
