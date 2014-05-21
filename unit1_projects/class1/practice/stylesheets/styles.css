@@ -89,12 +89,12 @@ header h1 {
   background: url('../images/icons/it.png') no-repeat 0 50%;
   padding-left: 40px;
 }
-header .nav {
+header nav {
   float: right;
   font-size: 1.2em;
   margin-left: 20px;
 }
-header .nav li {
+header nav li {
   line-height: 75px;
 }
 

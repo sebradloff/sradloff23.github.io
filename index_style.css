@@ -1,0 +1,134 @@
+body{
+  font-family: 'Legacy', Garamond, serif;
+  font-size: 16px;
+  width: 100%;
+  background-color: #B0E0E6;
+}
+
+/* pictures left */
+#pics_left{
+  width: 15%;
+}
+#pics_left img{
+  width: 95%;
+  height: 10%;
+  float: left;
+  z-index: -1;
+}
+
+/* pictures right */
+#pics_right{
+  position: absolute;
+  margin-left: 85%;
+}
+
+#pics_right img{
+  width: 95%;
+  height: 10%;
+  float: right;
+  z-index: -1;
+}
+
+/* about me */
+#about{
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 5%;
+  padding: 2% 2%;
+  border: thick dashed #00CC66;
+}
+
+#about h2{
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#about  p{
+  text-indent: 4%;
+  margin-top: 1.75%;
+}
+
+/* recent */
+#recent{
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 5%;
+  padding: 2% 2%;
+  border: thick double #00CC66;
+}
+
+#recent h2{
+  font-size: 1.4em;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#recent h3{
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 2%;
+}
+
+#recent p{
+  text-indent: 4%;
+  margin-top: 1.75%;
+}
+
+#original{
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #4D4DFF;
+  margin-top: 1.75%;
+}
+
+/* Header */
+header {
+  background-color: #00CC66;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 0%; 
+  padding: 1% 1%;
+}
+nav ul {
+  text-align: center;
+  font-size: 1.5em;
+}
+nav li {
+  display: inline;
+}
+nav li a {
+  margin: 1% 5%;
+  padding: .5%;
+  text-align:center;
+}
+nav li a:hover {
+  background-color: #FAAC58;
+}
+
+header:after {
+  /* clearfix hack */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* footer */
+
+footer{
+  background-color: #00CC66;
+  margin-top: 5%;
+}
+
+footer h5{
+  text-align: center;
+}
+
+/* fonts */
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.eot'); /* IE9 Compat Modes */
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('webfont.woff') format('woff'), /* Modern Browsers */
+       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
