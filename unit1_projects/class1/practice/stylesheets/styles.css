@@ -214,6 +214,18 @@ a:hover{
     font-weight: normal;
     font-style: normal;
   }
-  h3{
+  
+h3{
     font-family: 'Lato', Arial, sans-serif;
   }
+
+@media (max-width: 480px) {
+     
+    nav a{
+        float:left;
+        width:27%;
+        margin:0 1.7%;
+        padding:25px 2%;
+        margin-bottom:0;
+    }
+}
