@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<div id="top_menu" style="width: 50%; margin: 0 auto;">
+<head>
+	<title>Week 2 Tech Blog</title>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css">
+</head>
+
+<body>
+
+
+<ul class="nav">
+	<li>About This Blog</li>
+	<li>Popular</li>
+	<li>Rising</li>
+	<li>Important Updates</li>
+	<li>FAQ</li>
+</ul>
+</div>
+
+<ul class="side_menu">
+	<li>Picture of the Day</li>
+	<li><img src="http://apod.nasa.gov/apod/image/1405/Neptune-South-Pole-Voyager-2_2327x1670.jpg" width="300" height="240"></li>
+	<li id="username">Username: example</li>
+	<li id="password">Password: **********</li>
+</ul>
+
+<ul class="paid_ads">
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+</ul>
+
+
+<div id="content" style="width: 50%; margin: 0 auto;">
+
+<h2>May 22, 2014</h2>
+<h2>Using Class and Div</h2>
+
+<p>Class and ID are both tags we assign to elements in our HTML page, to reference those sections while styling the page in CSS. The best practices for using Class and Div are relatively simple and I will discuss them here.</p>
+
+<h3>1) Simple Analogy</h3>
+
+<p>Imagine you're in a room with 10 people who all have the most recent version of the iPhone. Everyone has the same product, being composed of the same parts and software, arranged in the exact same way. We'll consider all the iPhones in the room to be the class.</p>
+<p>Each individual person might have their own iPhone case, apps, contact list, ringtones, etc. making their iPhone theirs. Their individual iPhone is what we'll consider the ID by naming it &quotFirst_Name Last_Name's iPhone.&quot</p>
+<p>If I personally want to download the FaceBook app to my phone, I'm applying the change to &quotSebastian Radloff's iPhone,&quot the ID. This means that only my iPhone is downloading the FaceBook app, not all other iPhones in the room or class. When Apple has a software update for the iPhone, we can say that it is applied to all iPhones, meaning it is applied to the entire class.</p>
+
+<h3>2) ID</h3>
+
+<p>IDs' can only be used once within a document. The ID selector will allow you to style any elements encapsulated by your ID through your CSS document. Below is an example of using ID.</p>
+
+<h4>HTML:</h4>
+<img src="./images/ID_html_ie.png" width="100%">
+<h4>CSS:</h4>
+<img src="./images/ID_css_ie.png">
+<h4>Display:</h4>
+<img src="./images/ID_display_ie.png" width="100%">
+<p>When referencing the ID's element in CSS, we write the &quot#&quot symbol followed by the designated ID name, then the element (#example_ID element). Remember, an ID is unique!</p>
+
+<h3>3) Class</h3>
+
+<p>A class can be used multiple times, unlike an ID. You should use the term class for an element that you are going to use a lot, which always needs to be styled the same way. Below is an example of using class.</p>
+
+<h4>HTML:</h4>
+<img src="./images/class_html_ie.png" width="100%">
+<h4>CSS:</h4>
+<img src="./images/class_css_ie.png">
+<h4>Display:</h4>
+<img src="./images/class_display_ie.png" width="100%">
+<p>When referencing the class' element in CSS, we write the element, the &quot.&quot Symbol, followed by the designated class name (element.example_class).</p>
+
+<h3>Conclusion</h3>
+
+<p>When thinking about IDs and Classes you should ask yourself if this will be the only instance of this element being styled in this particular way? If you said yes, give it an ID! If you said no, make it a class and save yourself the time from copy and pasting in the CSS document.</p>
+
+</div>
+
+<div id="background">
+<style type="text/css">
+body { background-color: #5882FA}
+</style>
+</div>
+
+
+</body>
+
+
+</html>

@@ -6,10 +6,11 @@ body{
 }
 
 /* pictures left */
-#pics_left{
-  width: 15%;
+.pics_left{
+  position: absolute;
+  margin-right: 85%;
 }
-#pics_left img{
+.pics_left img{
   width: 95%;
   height: 10%;
   float: left;
@@ -18,12 +19,12 @@ body{
 
 
 /* pictures right */
-#pics_right{
+.pics_right{
   position: absolute;
   margin-left: 85%;
 }
 
-#pics_right img{
+.pics_right img{
   width: 95%;
   height: 10%;
   float: right;
@@ -37,6 +38,7 @@ body{
   margin-top: 5%;
   padding: 2% 2%;
   border: thick dashed #00CC66;
+  background-color: white;
 }
 
 #about h2{
@@ -56,6 +58,8 @@ body{
   margin-top: 5%;
   padding: 2% 2%;
   border: thick double #00CC66;
+  border-radius: 6%;
+  background-color: white;
 }
 
 #recent h2{
@@ -122,6 +126,10 @@ footer{
 
 footer h5{
   text-align: center;
+}
+
+#info a:hover{
+  background-color: #FAAC58;
 }
 
 /* fonts */
