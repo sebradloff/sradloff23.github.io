@@ -7,31 +7,33 @@ body{
 
 /* pictures left */
 .pics_left{
-  position: absolute;
+  position: relative;
   margin-right: 85%;
 }
 .pics_left img{
   width: 95%;
   height: 10%;
   float: left;
-  z-index: -1;
 }
 
-.pics_left #all_posts{
+#all_posts{
   position: absolute;
-  margin-left: 1%;
-  padding: 1% 1%;
+  margin-top: 280%;
+  width: 95%;
+  margin-left: 10%;
   border: thick double #00CC66;
-  border-radius: 6%;
-  background-color: white;
-  width: 92%;
+  margin-right: 95%;
+
 }
 
 #all_posts h4{
-  text-decoration: underline;
   font-size: 1.5em;
+  text-decoration: underline;
 }
 
+#all_posts a:hover{
+  background-color: #FAAC58;
+}
 
 /* pictures right */
 .pics_right{
