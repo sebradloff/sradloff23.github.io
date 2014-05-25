@@ -86,6 +86,19 @@ body{
   margin-top: 1.75%;
 }
 
+/* all posts */
+
+#all_posts{
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 5%;
+  padding: 2% 2%;
+  border: thick double #00CC66;
+  border-radius: 6%;
+  background-color: white;
+}
+
+
 /* Header */
 header {
   background-color: #00CC66;
