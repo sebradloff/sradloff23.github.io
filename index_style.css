@@ -19,11 +19,9 @@ body{
 #all_posts{
   position: absolute;
   margin-top: 280%;
-  width: 95%;
-  margin-left: 10%;
+  width: 81%;
+  margin-left: 9%;
   border: thick double #00CC66;
- 
-
 }
 
 #all_posts h4{
