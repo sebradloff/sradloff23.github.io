@@ -39,71 +39,38 @@
 <div id="content" style="width: 50%; margin: 0 auto;">
 
 <h2>Net Neutrality: You Need to Know</h2>
+
+<p>Watch this video for a quick intro about net neurality:</p>
+
 <object width="560" height="315"><param name="movie" value="//www.youtube-nocookie.com/v/wtt2aSV8wdw?hl=en_US&amp;version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube-nocookie.com/v/wtt2aSV8wdw?hl=en_US&amp;version=3" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
 
+<h3>What is Net Neutrality?</h3>
 
+<p>Net neutrality is the idea that all Internet service providers and governments should treat all Internet data equally. This means that there can be no discrimination or charging differently based on content, user, or site platform. This idea is also a part of the open internet.</p>
 
-<h2>Array or Hash?</h2>
+<h3>The Debate in the USA:</h3>
 
-<p>The following definitions are pulled from ruby-doc.org:</p>
-<p><b>Array:</b> Arrays are ordered, integer-indexed collections of any object.
-Array indexing starts at 0. A negative index is assumed to be relative to the end of the array---that is, an index of -1 indicates the last element of the array, -2 is the next to last element in the array, and so on.
-</p>
-<p><b>Hash:</b> A Hash is a dictionary-like collection of unique keys and their values. Also called associative arrays, they are similar to Arrays, but where an Array uses integers as its index, a Hash allows you to use any object type. Hashes enumerate their values in the order that the corresponding keys were inserted.</p>
-
-<h3>.each method</h3>
-
-<p>The .each method allows you to iterate through and array or hash with ease. The difference is in the syntax of the proper iteration. Below is an example of using the .each method to iterate through an array, using a two dimensional array.</p>
-
-<img src="./images/array_each_method.jpg">
-
-<p>The .each method for a hash requires you to include both the key and value syntactically as seen below:</p>
-
-<img src="./images/hash_each_method.jpg">
-
-<p>As you can see, they are pretty much the exact same notation. This important to know because it affects how you view their indexing.</p>
-
-<h3>A few differences:</h3>
+<p>The FCC has been the ruling body in the USA, shaping the current laws of open internet. The first policy enacted in the USA in favor open internet, was written in 2005 with the following four principles in mind for internet users:</p>
 <ol>
-	<li>Key and Value != Index and Value</li>
-		<ul>
-			<p>In hashes, keys and values are locked to one another. While several keys can have the same value, within one hash, there can only be one name for a particular key connected to its value.</p>
-
-			<img src="./images/key_vs_value.jpg">
-
-			<p>While the values are the same in the first example, the key names are different. In the second example the values are different, but the key names are the same, which is impossible!</p>
-
-			<p>In arrays, the index of a value is relative and doesn&#39;t matter nearly as much as the key matters in a hash.</p>
-				<ul>
-					<p>For example: you can delete the number index at 2, causing the whole array to shift over. You can do this because you don&#39;t care where the value is indexed, because the index is relative to your operations on the array.</p>
-				</ul>
-
-			<p>For a hash, you can&#39;t simply delete the value without deleting the corresponding key. The whole entry must be deleted.</p>
-		</ul>
-	<li>Hash to array using .to_a method</li>
-		<ul>
-			<p>You can convert a hash to an array using the .to_a method. It will provide you a two dimensional array in which the key is listed before the value in their own array.</p>
-			
-			<img src="./images/h_to_a.jpg">
-		</ul>
-	<li>Array to hash build your own method</li>
-		<ul>
-			<p>Converting an array to hash is slightly more complicated. Here are two examples of creating a hash from a one-dimensional array and a two dimensional array.</p>
-
-			<img src="./images/array_to_hash.jpg">
-
-		</ul>
-
+	<li>Access the lawful Internet content of their choice</li>
+	<li>Run applications and use services of their choice, subject to the needs of law enforcement</li>
+	<li>Connect their choice of legal devices that do not harm the network</li>
+	<li>Competition among network providers, application and service providers, and content providers</li>
 </ol>
 
-<h3>When to use array or hash?</h3>
+<p>You can continue to read about the development of the open internet policy shifts <a href="http://en.wikipedia.org/wiki/Net_neutrality">here</a>, however, what&#39;s important is that over the years Internet service providers have begun to bandwith throttle or &quotslow-down&quot user access to certain high data usage websites.</p>
 
-<p>If you need a simple collection of values that are not connected to any particular thing, besides their grouping, an array will suffice. A good example are the grades on a test for an entire class. You just want to hold a collection of the grades and do not care in what order they are in or how they are indexed.</p>
-<p>Now, if you have a collection of values that are all related and should connect to some specific identifier, then you should use a hash. For example, you want to hold a collection of the grades from that test and the student who scored that grade. This is a great use of a hash, utilizing the student name as a key and the grade as the value. This way, you can still do all operations you would need on the array, but you can also find out scores based on the student&#39;s name using a simple .include? method on the hash. You could have linked the student name and test score using a two dimensional array, however, you would have to create two loops to index through the array on the level of student name, rather than once when using a hash.</p>
+<p>There was Comcast throttling BitTorrent speed back in 2008, proven in a court of law, while they admitted no wrongdoing. In late 2013 through early 2014, Verizon and Comcast bandwith throttled Netflix access to their customers. This was during a period where Comcast was demanding money from Netflix to handle all the data the website provides to it&#39;s users. Comcast throttled Netflix&#39;s service by passing all their data through a third party, before it reached the end users. This effectively slowed download speeds by 50%, which is clearly the act of paying a ransom and setting the hostages free. Guess what? Verizon wants in on the Netflix money too and is using a similar tactic as Comcast to achieved their goal.</p>
+
+<h3>This is Really Scary! Proposed 2014 FCC Policy:</h3>
+
+<p>The FCC announced in February of this year, to create new laws to enforce net neutrality while complying with previous court rulings. In late April, the new proposed rules would allow Internet Service Providers to build special &quotinternet traffic lanes&quot with faster download speeds for companies willing to pay more money. You might first think: &quotHey, that&#39;s not too bad! There should totally be even faster internet!&quot That&#39;s where you are wrong!</p>
+
+<p>In the language of the proposal, there is no standard definition for a faster lane. Business want to make money with spending the least amount of money possible. The easiest way to create a &quotfaster lane&quot is to throttle every single companies&#39; or persons&#39; website who doesn&#39;t pay the premium price. Screw that! An analogy would be if a company told you they could make you louder than everyone else in a room full of 10 people. Instead of giving you a megaphone, they put duct tape over the mouths of everyone else. You might be &quotlouder&quot by comparison, but they effectively did nothing to innovate or create an environment in which you were actually &quotlouder&quot than you personally were before.</p>
 
 <h3>Conclusion</h3>
 
-<p>Technically speaking, anything you can do with a hash, you can do with a two dimensional array, but it makes your job significantly harder! Use arrays when you need to group values based on a single commonality and use hashes when you need to group values based on a single commonality and individual identifier.</p>
+<p>The internet is the only place in the entire world where the playing field is equal. Everyone is equally as &quotloud&quot as everyone else, but the end users decide what is deemed important, noteworthy, and interesting, not the dollar amount you pay for your download speed.</p>
 
 
 
