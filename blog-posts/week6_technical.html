@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<div id="top_menu" style="width: 50%; margin: 0 auto;">
+<head>
+	<title>Week 5 Tech Blog</title>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css">
+	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+<body>
+
+
+<ul class="nav">
+	<li>About This Blog</li>
+	<li>Popular</li>
+	<li>Rising</li>
+	<li>Important Updates</li>
+	<li>FAQ</li>
+</ul>
+</div>
+
+<ul class="side_menu">
+	<li>Picture of the Day</li>
+	<li><img src="http://apod.nasa.gov/apod/image/1405/Neptune-South-Pole-Voyager-2_2327x1670.jpg" width="300" height="240"></li>
+	<li id="username">Username: example</li>
+	<li id="password">Password: **********</li>
+</ul>
+
+
+
+<ul class="paid_ads">
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+	<li><img src="http://international.blogs.hopkinsmedicine.org/files/2013/08/advertising.png" width="270" height="240"></li>
+</ul>
+
+
+<div id="content" style="width: 50%; margin: 0 auto;">
+
+<h2>Classes vs. Modules</h2>
+
+<p>When creating new customized Ruby objects, people will generally create a class to create an instance of said object. Your most basic class, would perhaps contain an initialize method and one other instance method. Modules are sometimes included in a class, to add certain behaviors to instances, objects, of that class, which may be present across many classes. In this blog post I will explain the differences between classes and modules in Ruby.</p>
+
+<h3>Classes</h3>
+
+<p>In a previous post, I outlined the basic syntax for defining a class using a coffee maker as an example. Here I will use the example of a class that creates a sports car, named SportsCar.</p>
+
+<figure>
+<pre class="prettyprint linenums">
+class SportsCar
+	attr_reader :doors, :color # => allows call of intance variables from main
+
+	def initialize(color)
+		@doors = 2
+		@color = color
+	end
+
+end
+
+Ferrari = SportsCar.new("red")
+p Ferrari.doors # => prints 2 to the console
+p Ferrari.color # => prints "red" to the console
+
+</pre>
+</figure>
+
+<p>As you can see, there is an initialize method which creates an instance of the class SportsCar with object variables @doors and @color. Now, let&#39;s say that this SportsCar class is actually a subclass of the class Car. This means that all SportsCar objects have access to Car class methods. Below is an example of what the Car class contains and the proper syntax to signal SportsCar as a subclass of Car.</p>
+
+<figure>
+<pre class="prettyprint linenums">
+
+class Car
+	attr_reader :wheels, :closed_body, :air_bags
+
+	def initialize
+		@wheels = 4
+		@closed_body = true
+		@air_bags = true
+	end
+
+end
+
+class SportsCar < Car
+	attr_reader :doors, :color # => allows call of intance variables from main
+
+	def initialize(color)
+		@doors = 2
+		@color = color
+		super()
+	end
+
+
+end
+
+
+Ferrari = SportsCar.new("red")
+p Ferrari.doors # => prints 2 to the console
+p Ferrari.color # => prints "red" to the console
+p Ferrari.wheels # => prints 4 to the console
+p Ferrari.closed_body # => prints true
+p Ferrari.air_bags # => prints true
+
+</pre>
+</figure>
+
+<p>Car contains the basic definition and behaviors of all car vehicles, which includes @wheels = 4, @closed_body = true, and @air_bags = true. I can access these variables to see what they are for my current sports car object. Using the super() call in the initialize method for SportsCar, your Ferrari now has access to the object variables and whatever methods you write in the Car class.</p>
+
+<p>It is important to note that classes can only have be a subclass to one class. This is how inheritance works in Ruby. However, a class can have any number of modules.</p>
+
+<h3>Modules</h3>
+
+<p>In Ruby, modules are considered to be a collection of methods and constants. In this example, I&#39;ll have a module named Vehicle, which encapsulates the functions of all vehicles. Vehicle includes four methods, drive, reverse, park, and neutral, and one instance variable named position, which keeps track of whether the vehicle is in drive, reversing, park, or in neutral. The proper syntax for the Vehicle module is listed below, as well as how it is included in the Car class.</p>
+
+<figure>
+<pre class="prettyprint linenums">
+
+module Vehicle
+	attr_reader :position
+
+	def initialize
+		@position = nil
+	end
+
+	def drive
+		@position = "drive"
+	end
+
+	def reverse
+		@position = "reverse"
+	end
+
+	def neutral
+		@position = "neutral"
+	end
+
+	def park
+		@position = "park"
+	end
+
+end
+
+class Car
+	attr_reader :wheels, :closed_body, :air_bags
+	include Vehicle
+
+	def initialize
+		@wheels = 4
+		@closed_body = true
+		@air_bags = true
+	end
+
+end
+
+class SportsCar < Car
+	attr_reader :doors, :color # => allows call of intance variables from main
+
+	def initialize(color)
+		@doors = 2
+		@color = color
+		super()
+	end
+
+
+end
+
+
+Ferrari = SportsCar.new("red")
+p Ferrari.doors # => prints 2 to the console
+p Ferrari.color # => prints "red" to the console
+p Ferrari.wheels # => prints 4 to the console
+p Ferrari.closed_body # => prints true
+p Ferrari.air_bags # => prints true
+Ferrari.drive # => calls drive method in Vehicle module
+p Ferrari.position # => prints "drive" to the console
+
+</pre>
+</figure>
+
+<p>Modules should be used as a collection of methods that can be applied to multiple classes. For example, the module Vehicle can be applied to the class Car, Motorcycle, ATV, and so on, because each of those classes requires those behaviors from the vehicle module. This makes your code more efficient, i.e. you do not need to repeat your code, and gives it a nice uncluttered look.</p>
+
+
+</div>
+
+<div id="background">
+<style type="text/css">
+body { background-color: #5882FA}
+</style>
+</div>
+
+
+
+
+
+</body>
+
+
+</html>
