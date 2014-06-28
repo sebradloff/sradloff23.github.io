@@ -5,6 +5,7 @@
 		<link rel="stylesheet" type="text/css" href="./unit1_projects/class1/completed/stylesheets/reset.css"/>
 	    <link rel="stylesheet" type="text/css" href="./index_style.css" charset="utf-8"/>
 	    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
 	</head>
 
 	<body>
@@ -39,6 +40,8 @@
 		<div id="all_posts">
 			<h4>All Posts</h4>
 			<ul>
+				<li><a href="blog-posts/week7_technical.html">Tech Blog Week 7</a></li>
+				<li><a href="blog-posts/week7_cultural.html">Cultural Blog Week 7</a></li>
 				<li><a href="blog-posts/week6_technical.html">Tech Blog Week 6</a></li>
 				<li><a href="blog-posts/week6_cultural_blog.html">Cultural Blog Week 6</a></li>
 				<li><a href="blog-posts/week5_cultural.html">Cultural Blog Week 5</a></li>
@@ -69,39 +72,53 @@
 
 <div id="recent">
 
-<h2>Learning about Classes, Instance Variables, and Instance Methods</h2>
+<h1>Tech Blog, Week 7</h1>
 
-<p>Ruby is a great language for many reasons, but an important reason is that every Ruby statement or expression evaluates to an Object. This means that every statement and expression inherits Object properties, which make Ruby such a pleasure to work with!</p>
+<h2>SQL Injections and Sanitizing Your Data</h2>
 
-<p>A class in Ruby is defined as a basic template from which object instances are created, allowing one to represent internal state and behavior methods operating on that state. Basically, we create Ruby classes to model something that has several different behaviors. A real life example I&#39;d like to present to you today is that of a coffee maker.</p>
+<img style="width: 100%;" src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png">
 
-<img src="./blog-posts/images/week_5_tech_blog/class_pic.jpg" style="width: 50%">
+<p>I&#39;ve seen this XKCD around the internet for quite some time and never truly understood the joke until this week. During week 7 of phase 0, we learned about the basics of SQL and if you were truly ambitious (read me), one could complete the bonus challenge combining Ruby and SQL.</p>
 
-<p>As you can see, the ruby syntax for a class is relatively simple.</p>
+<p>The bonus challenge involved creating Ruby methods which would take certain arguments, fetching the information from a database table using SQL, and returning a properly formatted result. One of the assignments was to make sure the SQL inputs were properly sanitized before making the SQL call. Here is an example:</p>
 
-<p>Now let&#39;s say our coffee maker needs a few inherent properties such as a name, it&#39;s beans level, and water level. These are not behaviors, but properties that a coffee maker has which are needed for later behaviors. These properties are stored as instance variables, meaning instance variables are variables pertaining to a particular object, lasting the complete life of the object. </p>
+<figure>
+<pre class="prettyprint linenums" style="font-size: 10px;">
+require 'sqlite3'
 
-<img src="./blog-posts/images/week_5_tech_blog/initialize_pic.jpg" style="width: 50%">
+$db = SQLite3::Database.open "congress_poll_results.db"
 
-<p>As you can see the proper way for creating instance variables, is to define an instance method which takes the variables you eventually want as instance variables, as arguments. Here, we take the name of the coffee maker and add it to the instance variable @name. The &quot@&quot symbol is used as the notation for an instance variable, and must be placed in the first position of the variable name. We also initialized to other variables, @beans and @water, to equal 100. This is going to represent the percentage of beans and water level throughout the object&#39;s life.</p>
+def print_representative_state(*state)
+	states = *state
+	states.each {|state| (state.match(/^[[:alpha:]]+$/) && (state.length == 2)) ? next : raise(ArgumentError.new("#{state} is not a proper state abreviation"))}
 
-<p>What should our coffee maker do? Make coffee of course! Let&#39;s say we want to make an espresso or black coffee as our drink options. We will create two methods: one named black and the other named espresso. These methods are instance methods, because they are accessed by an object of the class, and use or work on that object, expressing object behaviors. The black method, will make us black coffee by subtracting 20 from both the @water and @beans instance variables respectively, and return a string which let&#39;s us know our delicious coffee is ready. The espresso method, will make us an espresso by subtracting 10 and 30 from the @water and @beans instance variables, and return a string letting us know our espresso is ready. These methods are instance methods, because the object calls them directly using the dot operator.</p>
+	puts "REPRESENTATIVES AND THE STATE THEY REPRESENT"
+	
+	states.each {|state| 
+ 	my_info = $db.execute("SELECT name, location FROM congress_members WHERE location='#{state}'")
+ 	my_info.each {|name, state| puts "#{name} - #{state}"}}
+end
 
-<img src="./blog-posts/images/week_5_tech_blog/drink_methods.jpg" style="width: 100%">
+print_representative_state("NJ", "NY", "ME", "FL", "AK")
 
-<p>Now, we make a few drinks and we want to check how much water and beans our coffee maker has left. We built two additional methods, check_water_level and check_beans_level, to return strings telling the user how much of each is remaining. If we see that the water or beans levels are low, we should probably refill them. Therefore, we create two more methods, add_beans and add_water, which fill the water and beans levels back to 100.</p>
+</pre>
+</figure>
 
-<img src="./blog-posts/images/week_5_tech_blog/check_levls.jpg" style="width: 100%">
+<p>As you can see, the method takes a splat argument, allowing for theoretically unlimited state names to be inputted during the method call. The splat argument is assigned to an array named states. The first iteration of states.each checks if each state inputted has an argument containing only characters of the alphabet and a length of two characters. If either of those tests fail, it raises an ArgumentError and will not perform the SQL query. This might not be the best method to sanitize the input data, but for the purposes of this exercise, it does a pretty good job of preventing potentially malicious SQL queries. Let me explain the why.</p>
 
-<p>We seem to have thought of everything right? We can check how much water and beans there are left, we can add water and beans, and we can even create two drinks. However, we currently do not have anything preventing us from creating drinks if the water and beans levels are below the requirements necessary to make the drink being called. The water and beans level will simply become negative! All we need are two simple conditional statements. The first making sure the coffee maker has enough water and beans to make our drink and the second is the procedure we previously wrote for our drink method.</p>
+<p>Looking back at the intro XKCD comic, the mother named her child &quot;Robert&#39;); DROP TABLE Students;--&quot; (sans outer double quotes). What most likely happened, is the school inputted her sons name into the school&#39;s system which queries their SQL database to add a students to the table named Students. The name Robert followed by single quote, closes the string most likely meant for the student name in the SQL query. The semi-colon that follows closes the current command, which is why the command that follows &quot;DROP TABLE STUDENTS;&quot; is will be run unless SQL realizes something is going wrong. This is why the double dash follows the DROP command, to &quot;eat&quot; any of the SQL code which would normally follow the student&#39;s name. Robert&#39;); DROP TABLE Students;-- effectively deleted the database table named Students. You can see why not sanitizing your inputs can be a HUGE issue.</p>
 
-<img src="./blog-posts/images/week_5_tech_blog/full_pic.jpg" style="width: 90%">
-<img src="./blog-posts/images/week_5_tech_blog/calls.jpg" style="width: 90%">
+<p>As a new programmer, the best you can do to protect yourself against basic SQL injections, is to make sure user inputs are sanitized or checked before used in SQL queries. A simple three to four lines of code can save you time, money, and frustration.</p>
 
-<p>That&#39;s all it takes to create a basic model of a real life object using class, instance variables, and objects.</p>
+<h4>Here are a few resources to learn how to prevent SQL injections:</h4>
+<ul>
+	<li><a href="https://www.schneier.com/blog/archives/2008/10/how_to_write_in.html">Schneier on Security</a></li>
+	<li><a href=" http://download.oracle.com/oll/tutorials/SQLInjection/index.htm">Oracle Tutorial</a></li>
+</ul>
 
 
-<a id="original" href="./blog-posts/week5_technical.html"><br>Read the post in its original formatting</a>
+
+<a id="original" href="./blog-posts/week7_technical.html"><br>Read the post in its original formatting</a>
 
 </div>
 
