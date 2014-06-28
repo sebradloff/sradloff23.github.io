@@ -10,13 +10,13 @@ body{
   	border: 1px solid #E96D63;
   	color: #4A789C;
   	text-align: center;
-  	margin-top: 5px;
-  	margin-left: 1px;
-  	margin-right: 1px;
-  	padding-top: 5px;
-  	padding-bottom: 5px;
-  	padding-left: 2px;
-  	padding-right: 2px;
+  	margin-top: 1%;
+  	margin-left: 1%;
+  	margin-right: 1%;
+  	padding-top: 1%;
+  	padding-bottom: 1%;
+  	padding-left: 1%;
+  	padding-right: 1%;
 }
 
 .nav li{
@@ -34,7 +34,6 @@ body{
 /* left side profile */
 
 #profile{
-	position: relative;
 	float: left;
 	margin-left: 1.1%;
 	border: 2px solid;

@@ -1,50 +1,121 @@
+body{
+  font-family: 'Legacy', Garamond, serif;
+  font-size: 16px;
+  width: 100%;
+  background-color: #B0E0E6;
+}
+
 .nav{
-  	background: blue;
-  	border: 1px solid white;
-  	color: white;
+  	background: #F4BA70;
+  	border: 1px solid #E96D63;
+  	color: #4A789C;
   	text-align: center;
-  	margin-top: 5px;
-  	margin-left: 1px;
-  	margin-right: 1px;
-  	padding-top: 5px;
-  	padding-bottom: 5px;
-  	padding-left: 2px;
-  	padding-right: 2px;
+  	margin-top: 1%;
+  	margin-left: 1%;
+  	margin-right: 1%;
+  	padding-top: 1%;
+  	padding-bottom: 1%;
+  	padding-left: 1%;
+  	padding-right: 1%;
 }
 
 .nav li{
 	display: inline;
-	border: 2px solid red;
 	font-size: 20px;
 	padding-left: 8px;
 	padding-right: 8px;
 }
 
-ul.side_menu{
-	position: fixed;
-	margin-right: 0px;
-	right:0px;
-	top:50px;
-	list-style-type: none;
+.nav li a:hover {
+  background-color: #85C1F5;
 }
 
-ul.paid_ads{
-	position: absolute;
-	margin-left: 0px;
-	left:0px;
-	top:50px;
-	list-style-type: none;
 
+/* left side profile */
+
+#profile{
+	float: left;
+	margin-left: 1.1%;
+	border: 2px solid;
+  	border-radius: 25px;
+  	border-color: #E96D63;
+  	width: 20%;
+  	background-color: #4A789C;
 }
 
-#username{
-	border: 1px solid white;
-	margin-right: 0px;
-	width:140px;
-	background-color: #FACC2E;
+#profile img{
+	width: 90%;
+	padding-left: 5%;
+	padding-top: 5%;
 }
-#password{
-	border: 1px solid white;
-	width:150px;
-	background-color: #FE642E;
+
+#profile h3{
+	text-align: center;
+}
+
+#profile p{
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+/* right side work */
+
+#work{
+	float: right;
+	margin-right: 1.1%;
+	border: 2px solid;
+  	border-radius: 25px;
+  	border-color: #E96D63;
+  	width: 20%;
+  	background-color: #4A789C;
+}
+
+#work h3{
+	text-align: center;
+}
+
+#work ul{
+	padding-left: 15%;
+}
+
+/* footer */
+
+footer{
+  background-color: #F4BA70;
+  margin-top: 5%;
+  padding: 0%
+}
+
+footer h5{
+	text-align: center;
+	padding: 0%;
+	margin: 0%;
+}
+
+#info h5{
+	margin: 0%;
+}
+
+#info a:hover{
+  background-color: #85C1F5;
+}
+
+#content{
+  margin-right: 10%;
+  margin-left: 10%;
+  margin-top: 2%;
+  padding: 2% 2%;
+  border: 2px solid;
+  border-radius: 25px;
+  border-color: #E96D63;
+}
+
+/* fonts */
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.eot'); /* IE9 Compat Modes */
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('webfont.woff') format('woff'), /* Modern Browsers */
+       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
