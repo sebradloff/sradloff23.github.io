@@ -150,6 +150,8 @@ header {
   margin-right: 15%;
   margin-top: 0%; 
   padding: 1% 1%;
+  border: thick double #E96D63;
+  border-radius: 2%;
 }
 nav ul {
   text-align: center;
