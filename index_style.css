@@ -3,47 +3,71 @@ body{
   font-size: 16px;
   width: 100%;
   background-color: #B0E0E6;
+  margin: 0%;
 }
 
-/* pictures left */
-.pics_left{
-  position: relative;
-  margin-right: 85%;
-}
-.pics_left img{
-  width: 95%;
-  height: 10%;
+/* left section */
+.left_section{
   float: left;
+  width: 20%;
+  margin-top: 2%;
+  margin-left: 1%
+  
 }
 
-#all_posts{
-  position: absolute;
-  margin-top: 280%;
-  width: 81%;
-  margin-left: 9%;
-  border: thick double #00CC66;
+/* left side profile */
+
+#profile{
+  position: relative;
+  border: 2px solid;
+  border-radius: 25px;
+  border-color: #E96D63;
+  background-color: #4A789C;
 }
 
-#all_posts h4{
-  font-size: 1.5em;
-  text-decoration: underline;
+#profile img{
+  width: 90%;
+  padding-left: 5%;
+  padding-top: 5%;
 }
 
-#all_posts a:hover{
-  background-color: #FAAC58;
+#profile h3{
+  text-align: center;
+  font-weight: bold;
 }
 
-/* pictures right */
-.pics_right{
-  position: absolute;
-  margin-left: 85%;
+#profile p{
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  padding-bottom: 4%;
 }
 
-.pics_right img{
-  width: 95%;
-  height: 10%;
+/*right section*/
+
+.right_section{
   float: right;
-  z-index: -1;
+  width: 20%;
+  margin-top: 2%;
+  margin-right: 2%;
+  border: 2px solid;
+  border-radius: 25px;
+  border-color: #E96D63;
+  background-color: #4A789C;
+}
+
+.right_section object{
+  width: 90%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-left: 5%;
+}
+
+.right_section h2{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.4em;
+  padding-top: 2%;
 }
 
 /* about me */
@@ -66,13 +90,14 @@ body{
   margin-top: 1.75%;
 }
 
-/* recent */
+/* main text */
 #recent{
-  margin-right: 15%;
-  margin-left: 15%;
-  margin-top: 5%;
+  margin-right: 22%;
+  margin-left: 22%;
+  margin-top: 2%;
+  width: 50%;
   padding: 2% 2%;
-  border: thick double #00CC66;
+  border: thick double #E96D63;
   border-radius: 2%;
   background-color: white;
 }
@@ -101,11 +126,26 @@ body{
   margin-top: 1.75%;
 }
 
+/*found on all posts page*/
+#all_posts h3{
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 3%;
+  text-decoration: underline;
+}
 
+#all_posts ul li{
+  font-size: 1.5em;
+  margin-top: 2%;
+}
+
+#all_posts a:hover{
+  background-color: #85C1F5;
+}
 
 /* Header */
 header {
-  background-color: #00CC66;
+  background-color: #F4BA70;
   margin-left: 15%;
   margin-right: 15%;
   margin-top: 0%; 
@@ -124,7 +164,7 @@ nav li a {
   text-align:center;
 }
 nav li a:hover {
-  background-color: #FAAC58;
+  background-color: #85C1F5;
 }
 
 header:after {
@@ -137,7 +177,10 @@ header:after {
 /* footer */
 
 footer{
-  background-color: #00CC66;
+  position: relative;
+  width: 100%;
+  bottom: 0%;
+  background-color: #F4BA70;
   margin-top: 5%;
 }
 
@@ -146,8 +189,10 @@ footer h5{
 }
 
 #info a:hover{
-  background-color: #FAAC58;
+  background-color: #85C1F5;
 }
+
+
 
 /* fonts */
 @font-face {
