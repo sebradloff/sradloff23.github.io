@@ -1,50 +1,67 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>Week 1 Tech Blog</title>
+		<link rel="stylesheet" type="text/css" href="../unit1_projects/class1/completed/stylesheets/reset.css"/>
+	    <link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css" charset="utf-8"/>
+	    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+	</head>
 
-<head>
-	<title>Week 1 Tech Blog</title>
-	<link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css">
-	<link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
-	<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-</head>
-
-<body>
-
-<div id="top_menu" style="width: 50%; margin: 0 auto;">
-<ul class="nav">
-	<li><a href="index.html">Back to Home Page</a></li>
-</ul>
+<div id="background">
+<style type="text/css">
+body { background-color: #7FCA9F}
+</style>
 </div>
 
+	<body>
+		<header>
+			<nav>
+				<ul>
+		            <li>
+		              <a href="../index.html">Home</a>
+		            </li>
+		            <li>
+		              <a href="./week7_technical.html">Tech Blog</a>
+		            </li>
+		            <li>
+		              <a href="./week7_cultural.html">Cultural Blog</a>
+		            </li>
+		            <li>
+		            	<a href="../all_posts.html">All Posts</a>
+		            </li>
+		            <li>
+		            	<a href="https://github.com/sradloff23">Portfolio</a>
+		            </li>
+	          	</ul>
+			</nav>
 
-<div id="profile">
-	<img src="images/prof.jpg">
-	<h3>Sebastian Radloff's Blog</h3>
-	<p>Aspiring software developer currently learning Ruby, HTML, CSS, SQL, and Javascript.</p>
-</div>
-
-<div id="work">
-	<h3>All Posts</h3>
-		<ul>
-			<li><a href="./week6_technical.html">Tech Blog Week 6</a></li>
-			<li><a href="./week6_cultural_blog.html">Cultural Blog Week 6</a></li>
-			<li><a href="./week5_cultural.html">Cultural Blog Week 5</a></li>
-			<li><a href="./week5_technical.html">Tech Blog Week 5</a></li>
-			<li><a href="./week4_cultural_blog.html">Cultural Blog Week 4</a></li>
-			<li><a href="./week4_technical.html">Tech Blog Week 4</a></li>
-			<li><a href="./week3_cultural.html">Cultural Blog Week 3</a></li>
-			<li><a href="./week3_technical.html">Tech Blog Week 3</a></li>
-			<li><a href="./week2_technical.html">Tech Blog Week 2</a></li>
-			<li><a href="./week1_cultural_blog.html">Cultural Blog Week 1</a></li>
-			<li><a href="./week1_technical_blog.html">Tech Blog Week 1</a></li>
-		</ul>
-</div>
+		</header>
+	
+	<section class="left_section">
+		
+		<div id="profile">
+			<img src="./images/prof.jpg">
+			<h3>Sebastian Radloff's Blog</h3>
+			<p>Aspiring software developer currently learning Ruby, HTML, CSS, SQL, and Javascript.</p>
+		</div>
+		
+	</section>
 
 
-<div id="content" style="width: 50%; margin: 0 auto;">
+	<section class="right_section">
+		<h2>Future: Games I created</h2>
+
+		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf'/><param name='FlashVars' value='id=40'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf' FlashVars='id=40' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
+
+		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/sudoku/sudoku.swf'/><param name='FlashVars' value='id=26'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/sudoku/sudoku.swf' FlashVars='id=26' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
+	</section>
 
 
-<h3>Three Websites I Frequent</h3>
+
+<div id="text_center">
+
+<h2>Three Websites I Frequent</h2>
 <h4><a href="http://www.nfl.com/">NFL.com</a></h4>
 <p>I visit NFL.com mainly to cure my NFL fix. Their's tons of content regarding everything NFL, however, the majority is biased in a positive NFL light. Still great for highlight videos and the occasional player piece. The layout isn't that great. It's relatively cluttered in my opinion. There isn't a nice flow of content, nothing seperates the right sidebar from the center content/article snippets. Tons of player pictures and videos, which work great as click-bait. The latest headlines section is nice, I just wish it was somehow removed from the flow of the page and not buried within the current center content. It should be on the left sidebar in my opinion. Overall, NFL.com's design is ok; it could be better, but it would take some major changes.</p>
 
@@ -57,24 +74,13 @@
 <p>The Music Ninja, as you may have guessed, is a music blog. For starters, their menu bar is also incredibly intuitive and includes great drop down preview for each category on the menu bar. The header of the page contains their music player which is nice. This means no matter what page of their site I am on, I can continue listening to the same track I had been playing; great feature. Their top section, featured tracks, is a great mash of images with names of the artist and track on display. It's an odd organized clutter if that makes any sense. You can scroll down to see a genral order of posts, organized by the most recent post made. The endless scrolling is a nice touch, and a dangerous one (You may or may not scroll for a few hours). The right sidebar begins after the featured tracks section. It's relatively basic: sponsored track, email list, their radio section, Facebook, and shotout to the artist of the month. Overall, I think it's a great music review site and the layout is pretty crisp.</p>
 
 </div>
-
-<footer>
-	<h5>&copy; 2014 Sebastian Radloff No Rights Reserved</h5>
-	<div id="info"><h5>To contact me click <a href="mailto:sradloff23@gmail.com?Subject=DBC%20Blog" target="_top">here</a></h5></div>
-</footer>
-
-
-<div id="background">
-<style type="text/css">
-body { background-color: #7FCA9F}
-</style>
-</div>
-
 	
 
-</body>
-	
+	</body>
 
-
+	<footer>
+		<h5>&copy; 2014 Sebastian Radloff No Rights Reserved</h5>
+		<div id="info"><h5>To contact me click <a href="mailto:sradloff23@gmail.com?Subject=DBC%20Blog" target="_top">here</a></h5></div>
+	</footer>
 
 </html>
