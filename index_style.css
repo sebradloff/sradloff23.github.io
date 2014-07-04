@@ -2,7 +2,7 @@ body{
   font-family: 'Legacy', Garamond, serif;
   font-size: 16px;
   width: 100%;
-  background-color: #B0E0E6;
+  background-color: #7FCA9F;
   margin: 0%;
 }
 
@@ -19,8 +19,8 @@ body{
 
 #profile{
   position: relative;
-  border: 2px solid;
-  border-radius: 25px;
+  border: 0.2em solid;
+  border-radius: 2em;
   border-color: #E96D63;
   background-color: #4A789C;
 }
@@ -50,8 +50,8 @@ body{
   width: 20%;
   margin-top: 2%;
   margin-right: 2%;
-  border: 2px solid;
-  border-radius: 25px;
+  border: .2em solid;
+  border-radius: 2em;
   border-color: #E96D63;
   background-color: #4A789C;
 }
