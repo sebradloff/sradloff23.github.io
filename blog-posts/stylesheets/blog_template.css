@@ -18,8 +18,8 @@ body{
 
 #profile{
   position: relative;
-  border: 2px solid;
-  border-radius: 25px;
+  border: 0.2em solid;
+  border-radius: 2em;
   border-color: #E96D63;
   background-color: #4A789C;
 }
@@ -49,8 +49,8 @@ body{
   width: 20%;
   margin-top: 2%;
   margin-right: 2%;
-  border: 2px solid;
-  border-radius: 25px;
+  border: 0.2em solid;
+  border-radius: 2em;
   border-color: #E96D63;
   background-color: #4A789C;
 }

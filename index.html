@@ -18,7 +18,7 @@
 		              <a href="./index.html">Home</a>
 		            </li>
 		            <li>
-		              <a href="blog-posts/week7_technical.html">Tech Blog</a>
+		              <a href="blog-posts/week8_technical.html">Tech Blog</a>
 		            </li>
 		            <li>
 		              <a href="blog-posts/week7_cultural.html">Cultural Blog</a>
@@ -57,53 +57,113 @@
 
 <div id="recent">
 
-<h1>Tech Blog, Week 7</h1>
+<h1>Tech Blog, Week 8</h1>
 
-<h2>SQL Injections and Sanitizing Your Data</h2>
+<h2>The Basics of Regular Expressions</h2>
 
-<img style="width: 100%;" src="http://imgs.xkcd.com/comics/exploits_of_a_mom.png">
 
-<p>I&#39;ve seen this XKCD around the internet for quite some time and never truly understood the joke until this week. During week 7 of phase 0, we learned about the basics of SQL and if you were truly ambitious (read me), one could complete the bonus challenge combining Ruby and SQL.</p>
+<p>Regular expressions specify a pattern of characters. These patterns can be used for conditional matching, finding substrings, and other forms of text filtering.</p>
 
-<p>The bonus challenge involved creating Ruby methods which would take certain arguments, fetching the information from a database table using SQL, and returning a properly formatted result. One of the assignments was to make sure the SQL inputs were properly sanitized before making the SQL call. Here is an example:</p>
+<p>A quick example to demonstrate a regular expression in Ruby:</p>
 
 <figure>
-<pre class="prettyprint linenums" style="font-size: 0.7em;">
-require 'sqlite3'
+<pre class="prettyprint linenums" style="font-size: 1em;">
 
-$db = SQLite3::Database.open "congress_poll_results.db"
-
-def print_representative_state(*state)
-	states = *state
-	states.each {|state| (state.match(/^[[:alpha:]]+$/) && (state.length == 2)) ? next : raise(ArgumentError.new("#{state} is not a proper state abreviation"))}
-
-	puts "REPRESENTATIVES AND THE STATE THEY REPRESENT"
-	
-	states.each {|state| 
- 	my_info = $db.execute("SELECT name, location FROM congress_members WHERE location='#{state}'")
- 	my_info.each {|name, state| puts "#{name} - #{state}"}}
-end
-
-print_representative_state("NJ", "NY", "ME", "FL", "AK")
+p str.include?(&quot;sentence&quot;)
+# => true
+p str.match(/sentence/)
+# => MatchData "sentence"
 
 </pre>
 </figure>
 
-<p>As you can see, the method takes a splat argument, allowing for theoretically unlimited state names to be inputted during the method call. The splat argument is assigned to an array named states. The first iteration of states.each checks if each state inputted has an argument containing only characters of the alphabet and a length of two characters. If either of those tests fail, it raises an ArgumentError and will not perform the SQL query. This might not be the best method to sanitize the input data, but for the purposes of this exercise, it does a pretty good job of preventing potentially malicious SQL queries. Let me explain the why.</p>
+<p>As you can see the .include? method and the match method effectively do the same thing. However, the value true or false is being returned for the .include? method whereas the .match method returns a MatchData object containing the match or nil, if there is no match. This is important to remember! While nil equivocates to false when used in a boolean expression, if you plan on taking the match data and assigning it to a variable, you should know that it will assign the value nil to your variable. This means that even if the match is not found, nil will be added to your variable. Do not let this scare you, because regexes are actually super awesome!</p>
 
-<p>Looking back at the intro XKCD comic, the mother named her child &quot;Robert&#39;); DROP TABLE Students;--&quot; (sans outer double quotes). What most likely happened, is the school inputted her sons name into the school&#39;s system which queries their SQL database to add a students to the table named Students. The name Robert followed by single quote, closes the string most likely meant for the student name in the SQL query. The semi-colon that follows closes the current command, which is why the command that follows &quot;DROP TABLE STUDENTS;&quot; is will be run unless SQL realizes something is going wrong. This is why the double dash follows the DROP command, to &quot;eat&quot; any of the SQL code which would normally follow the student&#39;s name. Robert&#39;); DROP TABLE Students;-- effectively deleted the database table named Students. You can see why not sanitizing your inputs can be a HUGE issue.</p>
+<h3>Starting Your Regex</h3>
 
-<p>As a new programmer, the best you can do to protect yourself against basic SQL injections, is to make sure user inputs are sanitized or checked before used in SQL queries. A simple three to four lines of code can save you time, money, and frustration.</p>
+<p>The two slashes, //, signify the beginning and end of the regex that your are defining. All characters that you want identified should go in between the slashes.</p>
 
-<h4>Here are a few resources to learn how to prevent SQL injections:</h4>
-<ul>
-	<li><a href="https://www.schneier.com/blog/archives/2008/10/how_to_write_in.html">Schneier on Security</a></li>
-	<li><a href=" http://download.oracle.com/oll/tutorials/SQLInjection/index.htm">Oracle Tutorial</a></li>
-</ul>
+<h3>Building Your Regex</h3>
+
+<p>All characters and numbers are taken literally.</p>
+<figure>
+<pre class="prettyprint linenums" style="font-size: 1em;">
+
+/abc123/ == &quot;abc123&quot;
+
+</pre>
+</figure>
+
+<p>The backslash is used with special characters, which tells the regex parser that it should read the character as is with no &quot;special&quot; connotation attached.</p>
+<figure>
+<pre class="prettyprint linenums" style="font-size: 1em;">
+
+/who\?/ == &quot;who?&quot; 
+
+</pre>
+</figure>
+
+<p>These are the special characters for the regex parser: ^ $ ? . / \ [ ] { } ( ) + * </p>
+
+<p>The dot(.) character is know as the wild card character. This means it will return any character in that position.</p>
+
+<p>/.ello/ could return either &quot;Jello&quot;, &quot;hello&quot;, &quot;9ello&quot;, or even &quot;!ello&quot;.</p>
+
+<p>If the string you are matching is &quot;Othello&quot; and the regex is /.ello/ the Match Data object returned will be &quot;hello&quot;, because that is exactly what you asked the regex parser to search for.</p>
+
+<p>A bracket notation allows you to control which set of characters should be in a specific location of your regex.
+&quot;hello&quot;.match(/[jh]ello/) will  return the Match Data object &quot;hello&quot;,
+&quot;jello&quot;.match(/[jh]ello/) will return the Match Data object &quot;jello&quot;.</p>
+
+<p>You can also specify if you would like any letter of the alphabet or integer with the following notation:<br>
+/[a-z]/ matches any lowercase alphabet letter.<br>
+/[A-Z]/ matches any uppercase alphabet letter.<br>
+/[A-z]/ matches any single alphabet letter.<br>
+/[0-9]/ or /\d/ will both match any integer.<br>
+/[A-z0-9_]/ or /\w/ will both match any character, digit, or underscore.
+</p>
+
+<h3>Identifying Multiple Words</h3>
+
+<p>So far we&#39;ve identified a simplified way to find singular characters or simple strings, but now we&#39;ll move onto identifying and saving multiple words into a Match Data object.</p>
+
+<p>Let&#39;s say you have a document filled with client names. They follow the style of Mr. or Mrs. first_name last_name. We know each portion of the substring is separated by a space meaning our regex should look like this: /Mrs?. [A-z]+ [A-z]+/</p>
+
+<p>The &quot;?&quot; special character following the &quot;s&quot;, let&#39;s the regex parser know that the s character may or may not be there. The &quot;+&quot; sign is a special character which captures all continuous characters which match the characters designated between the brackets preceding it.</p>
+
+<figure>
+<pre class="prettyprint linenums" style="font-size: 1em;">
+
+p &quot;Mr. Sebastian Radloff&quot;.match(/Mrs?. [A-z]+ [A-z]+/)
+# => MatchData &quot;Mr. Sebastian Radloff&quot;
+
+</pre>
+</figure>
+
+<p>If we include parentheses around each section of the regex and save the Match Data object to a variable, we can individually manipulate the data.</p>
+
+<figure>
+<pre class="prettyprint linenums" style="font-size: 1em;">
+
+name = &quot;Mr. Sebastian Radloff&quot;.match(/(Mrs?.) ([A-z]+) ([A-z]+)/)
+
+p name[0]
+# => MatchData &quot;Mr. Sebastian Radloff&quot;
+p name[1]
+# => MatchData &quot;Mr.&quot;
+p name[2]
+# => MatchData &quot;Sebastian&quot;
+p name[3]
+# => MatchData &quot;Radloff&quot;
+
+</pre>
+</figure>
+
+<p>It is important to note that name[0] returns the whole Match Data objects, which is unlike the array indexing most of us are familiar with. I hope this basic regex explanation can help you understand the complexities of the regex class. If you want to learn more about regex and Ruby, I cannot recommend the <a href="http://www.manning.com/black2/">Well Grounded Rubyist</a> enough.</p>
 
 
 
-<a id="original" href="./blog-posts/week7_technical.html"><br>Read the post in its original formatting</a>
+<a id="original" href="./blog-posts/week8_technical.html"><br>Read the post in its original formatting</a>
 
 </div>
 
