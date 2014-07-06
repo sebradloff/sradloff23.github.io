@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Week 8 Tech Blog</title>
+		<link rel="stylesheet" type="text/css" href="../unit1_projects/class1/completed/stylesheets/reset.css"/>
+	    <link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css" charset="utf-8"/>
+	    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+	</head>
+
+<div id="background">
+<style type="text/css">
+body { background-color: #7FCA9F}
+</style>
+</div>
+
+	<body>
+		<header>
+			<nav>
+				<ul>
+		            <li>
+		              <a href="../index.html">Home</a>
+		            </li>
+		            <li>
+		              <a href="./week8_technical.html">Tech Blog</a>
+		            </li>
+		            <li>
+		              <a href="./week7_cultural.html">Cultural Blog</a>
+		            </li>
+		            <li>
+		            	<a href="../all_posts.html">All Posts</a>
+		            </li>
+		            <li>
+		            	<a href="https://github.com/sradloff23">Portfolio</a>
+		            </li>
+	          	</ul>
+			</nav>
+
+		</header>
+	
+	<section class="left_section">
+		
+		<div id="profile">
+			<img src="./images/prof.jpg">
+			<h3>Sebastian Radloff's Blog</h3>
+			<p>Aspiring software developer currently learning Ruby, HTML, CSS, SQL, and Javascript.</p>
+		</div>
+		
+	</section>
+
+
+	<section class="right_section">
+		<h2>Future: Games I created</h2>
+
+		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf'/><param name='FlashVars' value='id=40'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf' FlashVars='id=40' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
+
+		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/sudoku/sudoku.swf'/><param name='FlashVars' value='id=26'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/sudoku/sudoku.swf' FlashVars='id=26' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
+	</section>
+
+
+
+<div id="text_center">
+
+<h1>Tech Blog, Week 8</h1>
+
+<h2>The Basics of Regular Expressions</h2>
+
+
+<p>Regular expressions specify a pattern of characters. These patterns can be used for conditional matching, finding substrings, and other forms of text filtering.</p>
+
+<p>A quick example to demonstrate a regular expression in Ruby:</p>
+
+<figure>
+<pre class="prettyprint linenums" style="font-size: 1em;">
+
+p str.include?(&quot;sentence&quot;)
+# => true
+p str.match(/sentence/)
+# => MatchData "sentence"
+
+</pre>
+</figure>
+
+<p>As you can see the .include? method and the match method effectively do the same thing. However, the value true or false is being returned for the .include? method whereas the .match method returns a MatchData object containing the match or nil, if there is no match. This is important to remember! While nil equivocates to false when used in a boolean expression, if you plan on taking the match data and assigning it to a variable, you should know that it will assign the value nil to your variable. This means that even if the match is not found, nil will be added to your variable. Do not let this scare you, because regexes are actually super awesome!</p>
+
+<h3>Starting Your Regex</h3>
+
+<p>The two slashes, //, signify the beginning and end of the regex that your are defining. All characters that you want identified should go in between the slashes.</p>
+
+<h3>Building Your Regex</h3>
+
+<p>All characters and numbers are taken literally.</p>
+<figure>
+<pre class="prettyprint linenums" style="font-size: 1em;">
+
+/abc123/ == &quot;abc123&quot;
+
+</pre>
+</figure>
+
+<p>The backslash is used with special characters, which tells the regex parser that it should read the character as is with no &quot;special&quot; connotation attached.</p>
+<figure>
+<pre class="prettyprint linenums" style="font-size: 1em;">
+
+/who\?/ == &quot;who?&quot; 
+
+</pre>
+</figure>
+
+<p>These are the special characters for the regex parser: ^ $ ? . / \ [ ] { } ( ) + * </p>
+
+<p>The dot(.) character is know as the wild card character. This means it will return any character in that position.</p>
+
+<p>/.ello/ could return either &quot;Jello&quot;, &quot;hello&quot;, &quot;9ello&quot;, or even &quot;!ello&quot;.</p>
+
+<p>If the string you are matching is &quot;Othello&quot; and the regex is /.ello/ the Match Data object returned will be &quot;hello&quot;, because that is exactly what you asked the regex parser to search for.</p>
+
+<p>A bracket notation allows you to control which set of characters should be in a specific location of your regex.
+&quot;hello&quot;.match(/[jh]ello/) will  return the Match Data object &quot;hello&quot;,
+&quot;jello&quot;.match(/[jh]ello/) will return the Match Data object &quot;jello&quot;.</p>
+
+<p>You can also specify if you would like any letter of the alphabet or integer with the following notation:<br>
+/[a-z]/ matches any lowercase alphabet letter.<br>
+/[A-Z]/ matches any uppercase alphabet letter.<br>
+/[A-z]/ matches any single alphabet letter.<br>
+/[0-9]/ or /\d/ will both match any integer.<br>
+/[A-z0-9_]/ or /\w/ will both match any character, digit, or underscore.
+</p>
+
+<h3>Identifying Multiple Words</h3>
+
+<p>So far we&#39;ve identified a simplified way to find singular characters or simple strings, but now we&#39;ll move onto identifying and saving multiple words into a Match Data object.</p>
+
+<p>Let&#39;s say you have a document filled with client names. They follow the style of Mr. or Mrs. first_name last_name. We know each portion of the substring is separated by a space meaning our regex should look like this: /Mrs?. [A-z]+ [A-z]+/</p>
+
+<p>The &quot;?&quot; special character following the &quot;s&quot;, let&#39;s the regex parser know that the s character may or may not be there. The &quot;+&quot; sign is a special character which captures all continuous characters which match the characters designated between the brackets preceding it.</p>
+
+<figure>
+<pre class="prettyprint linenums" style="font-size: 1em;">
+
+p &quot;Mr. Sebastian Radloff&quot;.match(/Mrs?. [A-z]+ [A-z]+/)
+# => MatchData &quot;Mr. Sebastian Radloff&quot;
+
+</pre>
+</figure>
+
+<p>If we include parentheses around each section of the regex and save the Match Data object to a variable, we can individually manipulate the data.</p>
+
+<figure>
+<pre class="prettyprint linenums" style="font-size: 1em;">
+
+name = &quot;Mr. Sebastian Radloff&quot;.match(/(Mrs?.) ([A-z]+) ([A-z]+)/)
+
+p name[0]
+# => MatchData &quot;Mr. Sebastian Radloff&quot;
+p name[1]
+# => MatchData &quot;Mr.&quot;
+p name[2]
+# => MatchData &quot;Sebastian&quot;
+p name[3]
+# => MatchData &quot;Radloff&quot;
+
+</pre>
+</figure>
+
+<p>It is important to note that name[0] returns the whole Match Data objects, which is unlike the array indexing most of us are familiar with. I hope this basic regex explanation can help you understand the complexities of the regex class. If you want to learn more about regex and Ruby, I cannot recommend the Well Grounded Rubyist enough.</p>
+
+</div>
+	
+
+	</body>
+
+	<footer>
+		<h5>&copy; 2014 Sebastian Radloff No Rights Reserved</h5>
+		<div id="info"><h5>To contact me click <a href="mailto:sradloff23@gmail.com?Subject=DBC%20Blog" target="_top">here</a></h5></div>
+	</footer>
+
+</html>
+
