@@ -10,7 +10,7 @@ body{
 }
 
 /* main text */
-#text_center{
+#posts{
   margin-right: 22%;
   margin-left: 22%;
   margin-top: 5%;
@@ -22,34 +22,28 @@ body{
   background-color: #f5fafa;
 }
 
-#text_center h1{
-  font-size: 1.6em;
-  text-align: center;
-  padding-bottom: 2%;
-}
 
-#text_center h2{
-  font-size: 1.4em;
-  font-weight: bold;
-  text-decoration: underline;
-  text-align: center;
-  padding-bottom: 2%;
-}
-
-#text_center h3{
-  font-size: 1.2em;
+#posts h2{
+  font-size: 1.5em;
   font-weight: bold;
   margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: center;
 }
 
-#text_center p{
-  text-indent: 4%;
-  margin-top: 1.75%;
-  margin-bottom: 1.75%;
+#posts li {
+  font-size: 0.8em;
 }
 
-#text_center a:hover {
+
+#posts a:hover {
   background-color: #85C1F5;
+}
+
+#top-link {
+  position: absolute;
+  left: 7%;
+  top: 3%;
 }
 
 /* close */

@@ -1,113 +1,69 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Week 2 Tech Blog</title>
-		<link rel="stylesheet" type="text/css" href="../unit1_projects/class1/completed/stylesheets/reset.css"/>
-	    <link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css" charset="utf-8"/>
-	    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
-	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-	</head>
 
-<div id="background">
-<style type="text/css">
-body { background-color: #7FCA9F}
-</style>
-</div>
+<head>
+    <title>Week 2 Tech Blog</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css" charset="utf-8" />
+    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+</head>
 
-	<body>
-		<header>
-			<nav>
-				<ul>
-		            <li>
-		              <a href="../index.html">Home</a>
-		            </li>
-		            <li>
-		              <a href="./week7_technical.html">Tech Blog</a>
-		            </li>
-		            <li>
-		              <a href="./week7_cultural.html">Cultural Blog</a>
-		            </li>
-		            <li>
-		            	<a href="../all_posts.html">All Posts</a>
-		            </li>
-		            <li>
-		            	<a href="https://github.com/sradloff23">Portfolio</a>
-		            </li>
-	          	</ul>
-			</nav>
-
-		</header>
-	
-	<section class="left_section">
-		
-		<div id="profile">
-			<img src="./images/prof.jpg">
-			<h3>Sebastian Radloff's Blog</h3>
-			<p>Aspiring software developer currently learning Ruby, HTML, CSS, SQL, and Javascript.</p>
-		</div>
-		
-	</section>
-
-
-	<section class="right_section">
-		<h2>Future: Games I created</h2>
-
-		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf'/><param name='FlashVars' value='id=40'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf' FlashVars='id=40' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
-
-		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/sudoku/sudoku.swf'/><param name='FlashVars' value='id=26'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/sudoku/sudoku.swf' FlashVars='id=26' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
-	</section>
+< <body>
+    <div id="close">
+        <a href="../index.html">
+            <img src="./images/close.png">
+        </a>
+    </div>
 
 
 
-<div id="text_center">
+    <div id="text_center">
 
-<h2>May 22, 2014</h2>
-<h2>Using Class and Div</h2>
+        <h2>May 22, 2014</h2>
+        <h2>Using Class and Div</h2>
 
-<p>Class and ID are both tags we assign to elements in our HTML page, to reference those sections while styling the page in CSS. The best practices for using Class and Div are relatively simple and I will discuss them here.</p>
+        <p>Class and ID are both tags we assign to elements in our HTML page, to reference those sections while styling the page in CSS. The best practices for using Class and Div are relatively simple and I will discuss them here.</p>
 
-<h3>1) Simple Analogy</h3>
+        <h3>1) Simple Analogy</h3>
 
-<p>Imagine you're in a room with 10 people who all have the most recent version of the iPhone. Everyone has the same product, being composed of the same parts and software, arranged in the exact same way. We'll consider all the iPhones in the room to be the class.</p>
-<p>Each individual person might have their own iPhone case, apps, contact list, ringtones, etc. making their iPhone theirs. Their individual iPhone is what we'll consider the ID by naming it &quotFirst_Name Last_Name's iPhone.&quot</p>
-<p>If I personally want to download the FaceBook app to my phone, I'm applying the change to &quotSebastian Radloff's iPhone,&quot the ID. This means that only my iPhone is downloading the FaceBook app, not all other iPhones in the room or class. When Apple has a software update for the iPhone, we can say that it is applied to all iPhones, meaning it is applied to the entire class.</p>
+        <p>Imagine you're in a room with 10 people who all have the most recent version of the iPhone. Everyone has the same product, being composed of the same parts and software, arranged in the exact same way. We'll consider all the iPhones in the room to be the class.</p>
+        <p>Each individual person might have their own iPhone case, apps, contact list, ringtones, etc. making their iPhone theirs. Their individual iPhone is what we'll consider the ID by naming it &quotFirst_Name Last_Name's iPhone.&quot</p>
+        <p>If I personally want to download the FaceBook app to my phone, I'm applying the change to &quotSebastian Radloff's iPhone,&quot the ID. This means that only my iPhone is downloading the FaceBook app, not all other iPhones in the room or class. When Apple has a software update for the iPhone, we can say that it is applied to all iPhones, meaning it is applied to the entire class.</p>
 
-<h3>2) ID</h3>
+        <h3>2) ID</h3>
 
-<p>IDs' can only be used once within a document. The ID selector will allow you to style any elements encapsulated by your ID through your CSS document. Below is an example of using ID.</p>
+        <p>IDs' can only be used once within a document. The ID selector will allow you to style any elements encapsulated by your ID through your CSS document. Below is an example of using ID.</p>
 
-<h4>HTML:</h4>
-<img src="./images/ID_html_ie.png" width="100%">
-<h4>CSS:</h4>
-<img src="./images/ID_css_ie.png">
-<h4>Display:</h4>
-<img src="./images/ID_display_ie.png" width="100%">
-<p>When referencing the ID's element in CSS, we write the &quot#&quot symbol followed by the designated ID name, then the element (#example_ID element). Remember, an ID is unique!</p>
+        <h4>HTML:</h4>
+        <img src="./images/ID_html_ie.png" width="100%">
+        <h4>CSS:</h4>
+        <img src="./images/ID_css_ie.png">
+        <h4>Display:</h4>
+        <img src="./images/ID_display_ie.png" width="100%">
+        <p>When referencing the ID's element in CSS, we write the &quot#&quot symbol followed by the designated ID name, then the element (#example_ID element). Remember, an ID is unique!</p>
 
-<h3>3) Class</h3>
+        <h3>3) Class</h3>
 
-<p>A class can be used multiple times, unlike an ID. You should use the term class for an element that you are going to use a lot, which always needs to be styled the same way. Below is an example of using class.</p>
+        <p>A class can be used multiple times, unlike an ID. You should use the term class for an element that you are going to use a lot, which always needs to be styled the same way. Below is an example of using class.</p>
 
-<h4>HTML:</h4>
-<img src="./images/class_html_ie.png" width="100%">
-<h4>CSS:</h4>
-<img src="./images/class_css_ie.png">
-<h4>Display:</h4>
-<img src="./images/class_display_ie.png" width="100%">
-<p>When referencing the class' element in CSS, we write the element, the &quot.&quot Symbol, followed by the designated class name (element.example_class).</p>
+        <h4>HTML:</h4>
+        <img src="./images/class_html_ie.png" width="100%">
+        <h4>CSS:</h4>
+        <img src="./images/class_css_ie.png">
+        <h4>Display:</h4>
+        <img src="./images/class_display_ie.png" width="100%">
+        <p>When referencing the class' element in CSS, we write the element, the &quot.&quot Symbol, followed by the designated class name (element.example_class).</p>
 
-<h3>Conclusion</h3>
+        <h3>Conclusion</h3>
 
-<p>When thinking about IDs and Classes you should ask yourself if this will be the only instance of this element being styled in this particular way? If you said yes, give it an ID! If you said no, make it a class and save yourself the time from copy and pasting in the CSS document.</p>
+        <p>When thinking about IDs and Classes you should ask yourself if this will be the only instance of this element being styled in this particular way? If you said yes, give it an ID! If you said no, make it a class and save yourself the time from copy and pasting in the CSS document.</p>
 
-</div>
-	
+    </div>
 
-	</body>
 
-	<footer>
-		<h5>&copy; 2014 Sebastian Radloff No Rights Reserved</h5>
-		<div id="info"><h5>To contact me click <a href="mailto:sradloff23@gmail.com?Subject=DBC%20Blog" target="_top">here</a></h5></div>
-	</footer>
+    </body>
+
+
 
 </html>

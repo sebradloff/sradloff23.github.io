@@ -1,76 +1,36 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Week 6 Tech Blog</title>
-		<link rel="stylesheet" type="text/css" href="../unit1_projects/class1/completed/stylesheets/reset.css"/>
-	    <link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css" charset="utf-8"/>
-	    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
-	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-	</head>
 
-<div id="background">
-<style type="text/css">
-body { background-color: #7FCA9F}
-</style>
-</div>
-
-	<body>
-		<header>
-			<nav>
-				<ul>
-		            <li>
-		              <a href="../index.html">Home</a>
-		            </li>
-		            <li>
-		              <a href="./week7_technical.html">Tech Blog</a>
-		            </li>
-		            <li>
-		              <a href="./week7_cultural.html">Cultural Blog</a>
-		            </li>
-		            <li>
-		            	<a href="../all_posts.html">All Posts</a>
-		            </li>
-		            <li>
-		            	<a href="https://github.com/sradloff23">Portfolio</a>
-		            </li>
-	          	</ul>
-			</nav>
-
-		</header>
-	
-	<section class="left_section">
-		
-		<div id="profile">
-			<img src="./images/prof.jpg">
-			<h3>Sebastian Radloff's Blog</h3>
-			<p>Aspiring software developer currently learning Ruby, HTML, CSS, SQL, and Javascript.</p>
-		</div>
-		
-	</section>
-
-
-	<section class="right_section">
-		<h2>Future: Games I created</h2>
-
-		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf'/><param name='FlashVars' value='id=40'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf' FlashVars='id=40' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
-
-		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/sudoku/sudoku.swf'/><param name='FlashVars' value='id=26'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/sudoku/sudoku.swf' FlashVars='id=26' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
-	</section>
+<head>
+    <title>Week 6 Tech Blog</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css" charset="utf-8" />
+    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+</head>
 
 
 
-<div id="text_center">
+<body>
+    <div id="close">
+        <a href="../index.html">
+            <img src="./images/close.png">
+        </a>
+    </div>
 
-<h2>Classes vs. Modules</h2>
 
-<p>When creating new customized Ruby objects, people will generally create a class to create an instance of said object. Your most basic class, would perhaps contain an initialize method and one other instance method. Modules are sometimes included in a class, to add certain behaviors to instances, objects, of that class, which may be present across many classes. In this blog post I will explain the differences between classes and modules in Ruby.</p>
+    <div id="text_center">
 
-<h3>Classes</h3>
+        <h2>Classes vs. Modules</h2>
 
-<p>In a previous post, I outlined the basic syntax for defining a class using a coffee maker as an example. Here I will use the example of a class that creates a sports car, named SportsCar.</p>
+        <p>When creating new customized Ruby objects, people will generally create a class to create an instance of said object. Your most basic class, would perhaps contain an initialize method and one other instance method. Modules are sometimes included in a class, to add certain behaviors to instances, objects, of that class, which may be present across many classes. In this blog post I will explain the differences between classes and modules in Ruby.</p>
 
-<figure>
-<pre class="prettyprint linenums">
+        <h3>Classes</h3>
+
+        <p>In a previous post, I outlined the basic syntax for defining a class using a coffee maker as an example. Here I will use the example of a class that creates a sports car, named SportsCar.</p>
+
+        <figure>
+            <pre class="prettyprint linenums">
 class SportsCar
 	attr_reader :doors, :color # => allows call of intance variables from main
 
@@ -86,12 +46,12 @@ p Ferrari.doors # => prints 2 to the console
 p Ferrari.color # => prints "red" to the console
 
 </pre>
-</figure>
+        </figure>
 
-<p>As you can see, there is an initialize method which creates an instance of the class SportsCar with object variables @doors and @color. Now, let&#39;s say that this SportsCar class is actually a subclass of the class Car. This means that all SportsCar objects have access to Car class methods. Below is an example of what the Car class contains and the proper syntax to signal SportsCar as a subclass of Car.</p>
+        <p>As you can see, there is an initialize method which creates an instance of the class SportsCar with object variables @doors and @color. Now, let&#39;s say that this SportsCar class is actually a subclass of the class Car. This means that all SportsCar objects have access to Car class methods. Below is an example of what the Car class contains and the proper syntax to signal SportsCar as a subclass of Car.</p>
 
-<figure>
-<pre class="prettyprint linenums">
+        <figure>
+            <pre class="prettyprint linenums">
 
 class Car
 	attr_reader :wheels, :closed_body, :air_bags
@@ -125,18 +85,18 @@ p Ferrari.closed_body # => prints true
 p Ferrari.air_bags # => prints true
 
 </pre>
-</figure>
+        </figure>
 
-<p>Car contains the basic definition and behaviors of all car vehicles, which includes @wheels = 4, @closed_body = true, and @air_bags = true. I can access these variables to see what they are for my current sports car object. Using the super() call in the initialize method for SportsCar, your Ferrari now has access to the object variables and whatever methods you write in the Car class.</p>
+        <p>Car contains the basic definition and behaviors of all car vehicles, which includes @wheels = 4, @closed_body = true, and @air_bags = true. I can access these variables to see what they are for my current sports car object. Using the super() call in the initialize method for SportsCar, your Ferrari now has access to the object variables and whatever methods you write in the Car class.</p>
 
-<p>It is important to note that classes can only have be a subclass to one class. This is how inheritance works in Ruby. However, a class can have any number of modules.</p>
+        <p>It is important to note that classes can only have be a subclass to one class. This is how inheritance works in Ruby. However, a class can have any number of modules.</p>
 
-<h3>Modules</h3>
+        <h3>Modules</h3>
 
-<p>In Ruby, modules are considered to be a collection of methods and constants. In this example, I&#39;ll have a module named Vehicle, which encapsulates the functions of all vehicles. Vehicle includes four methods, drive, reverse, park, and neutral, and one instance variable named position, which keeps track of whether the vehicle is in drive, reversing, park, or in neutral. The proper syntax for the Vehicle module is listed below, as well as how it is included in the Car class.</p>
+        <p>In Ruby, modules are considered to be a collection of methods and constants. In this example, I&#39;ll have a module named Vehicle, which encapsulates the functions of all vehicles. Vehicle includes four methods, drive, reverse, park, and neutral, and one instance variable named position, which keeps track of whether the vehicle is in drive, reversing, park, or in neutral. The proper syntax for the Vehicle module is listed below, as well as how it is included in the Car class.</p>
 
-<figure>
-<pre class="prettyprint linenums">
+        <figure>
+            <pre class="prettyprint linenums">
 
 module Vehicle
 	attr_reader :position
@@ -198,20 +158,16 @@ Ferrari.drive # => calls drive method in Vehicle module
 p Ferrari.position # => prints "drive" to the console
 
 </pre>
-</figure>
+        </figure>
 
-<p>Modules should be used as a collection of methods that can be applied to multiple classes. For example, the module Vehicle can be applied to the class Car, Motorcycle, ATV, and so on, because each of those classes requires those behaviors from the vehicle module. This makes your code more efficient, i.e. you do not need to repeat your code, and gives it a nice uncluttered look.</p>
+        <p>Modules should be used as a collection of methods that can be applied to multiple classes. For example, the module Vehicle can be applied to the class Car, Motorcycle, ATV, and so on, because each of those classes requires those behaviors from the vehicle module. This makes your code more efficient, i.e. you do not need to repeat your code, and gives it a nice uncluttered look.</p>
 
 
 
-</div>
-	
+    </div>
 
-	</body>
 
-	<footer>
-		<h5>&copy; 2014 Sebastian Radloff No Rights Reserved</h5>
-		<div id="info"><h5>To contact me click <a href="mailto:sradloff23@gmail.com?Subject=DBC%20Blog" target="_top">here</a></h5></div>
-	</footer>
+</body>
+
 
 </html>

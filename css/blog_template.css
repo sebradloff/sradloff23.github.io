@@ -1,10 +1,6 @@
 body{
-  font-family: 'Source Sans Pro', sans-serif;
-  background-color: #f5fafa;
+  font-family: 'Legacy', Garamond, serif;
   font-size: 16px;
-  font-weight: 300;
-  line-height: 1.75em;
-  color: #696969;
   width: 100%;
   margin: 0%;
 }
@@ -18,14 +14,14 @@ body{
   width: 50%;
   padding: 2% 2%;
   border: thick double #E96D63;
-  border-radius: 3%;
-  background-color: #f5fafa;
+  border-radius: 2%;
+  background-color: white;
 }
 
 #text_center h1{
-  font-size: 1.6em;
-  text-align: center;
-  padding-bottom: 2%;
+	font-size: 1.6em;
+	text-align: center;
+	padding-bottom: 2%;
 }
 
 #text_center h2{
@@ -45,12 +41,15 @@ body{
 #text_center p{
   text-indent: 4%;
   margin-top: 1.75%;
-  margin-bottom: 1.75%;
 }
 
-#text_center a:hover {
-  background-color: #85C1F5;
+#original{
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #4D4DFF;
+  margin-top: 1.75%;
 }
+
 
 /* close */
 

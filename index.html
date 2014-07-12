@@ -1,193 +1,363 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Prologue 1.2 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-	<head>
-		<title>Sebastian Radloff's Blog</title>
-		
-		<link rel="stylesheet" type="text/css" href="./unit1_projects/class1/completed/stylesheets/reset.css"/>
-	    <link rel="stylesheet" type="text/css" href="./index_style.css" charset="utf-8"/>
-	    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
-	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-	</head>
 
+<head>
+    <title>Sebastian Radloff's Blog</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-panels.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel-noscript.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-wide.css" />
+    </noscript>
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+</head>
 
-	<body>
-		<header>
-			<nav>
-				<ul>
-		            <li>
-		              <a href="./index.html">Home</a>
-		            </li>
-		            <li>
-		              <a href="blog-posts/week8_technical.html">Tech Blog</a>
-		            </li>
-		            <li>
-		              <a href="blog-posts/week9_cultural.html">Cultural Blog</a>
-		            </li>
-		            <li>
-		            	<a href="./all_posts.html">All Posts</a>
-		            </li>
-		            <li>
-		            	<a href="https://github.com/sradloff23">Portfolio</a>
-		            </li>
-	          	</ul>
-			</nav>
+<body>
 
-		</header>
-	
-	<section class="left_section">
-		
-		<div id="profile">
-			<img src="blog-posts/images/prof.jpg">
-			<h3>Sebastian Radloff's Blog</h3>
-			<p>Aspiring software developer currently learning Ruby, HTML, CSS, SQL, and Javascript.</p>
-		</div>
-		
-	</section>
+    <!-- Header -->
+    <div id="header" class="skel-panels-fixed">
 
+        <div class="top">
 
-	<section class="right_section">
-		<h2>Future: Games I created</h2>
+            <!-- Logo -->
+            <div id="logo">
+                <span class="image avatar48">
+                    <img src="images/prof.jpg" alt="" />
+                </span>
+                <h1 id="title">Sebastian Radloff</h1>
+                <span class="byline">Aspiring Software Engineer</span>
+            </div>
 
-		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf'/><param name='FlashVars' value='id=40'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf' FlashVars='id=40' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
+            <!-- Nav -->
+            <nav id="nav">
+                <!--
+							
+								Prologue's nav expects links in one of two formats:
+								
+								1. Hash link (scrolls to a different section within the page)
+								
+								   <li><a href="#foobar" id="foobar-link" class="skel-panels-ignoreHref"><span class="fa fa-whatever-icon-you-want">Foobar</span></a></li>
 
-		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/sudoku/sudoku.swf'/><param name='FlashVars' value='id=26'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/sudoku/sudoku.swf' FlashVars='id=26' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
-	</section>
+								2. Standard link (sends the user to another page/site)
 
+								   <li><a href="http://foobar.tld"><span class="fa fa-whatever-icon-you-want">Foobar</span></a></li>
+							
+							-->
+                <ul>
+                    <li>
+                        <a href="#top" id="top-link" class="skel-panels-ignoreHref">
+                            <span class="fa fa-home">Intro</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#blog_post" id="blog_post-link" class="skel-panels-ignoreHref">
+                            <span class="fa fa-th">Blog Posts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" id="portfolio-link" class="skel-panels-ignoreHref">
+                            <span class="fa fa-briefcase">Portfolio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#about" id="about-link" class="skel-panels-ignoreHref">
+                            <span class="fa fa-user">About Me</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" id="contact-link" class="skel-panels-ignoreHref">
+                            <span class="fa fa-envelope">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
 
+        </div>
 
-<div id="recent">
+        <div class="bottom">
 
-<h1>Tech Blog, Week 8</h1>
+            <!-- Social Icons -->
+            <ul class="icons">
+                <li>
+                    <a href="https://www.linkedin.com/in/sradloff" class="fa fa-linkedin solo">
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/sradloff23" class="fa fa-github solo">
+                        <span>Github</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:sradloff23@gmail.com?Subject=Sebastian%20Radloff%20Blog" class="fa fa-envelope solo">
+                        <span>Email</span>
+                    </a>
+                </li>
+            </ul>
 
-<h2>The Basics of Regular Expressions</h2>
+        </div>
 
+    </div>
 
-<p>Regular expressions specify a pattern of characters. These patterns can be used for conditional matching, finding substrings, and other forms of text filtering.</p>
+    <!-- Main -->
+    <div id="main">
 
-<p>A quick example to demonstrate a regular expression in Ruby:</p>
+        <!-- Intro -->
+        <section id="top" class="one">
+            <div class="container">
 
-<figure>
-<pre class="prettyprint linenums" style="font-size: 1em;">
+                <a class="image featured">
+                    <img src="images/chicago-skyline.jpg" alt="" />
+                </a>
 
-p str.include?(&quot;sentence&quot;)
-# => true
-p str.match(/sentence/)
-# => MatchData "sentence"
+                <header>
+                    <h2 class="alt">Hey there! My name is
+                        <strong>Sebastian Radloff</strong>
+                        <br />and when I'm not busy learning Ruby, JavaScript,
+                        <br />HTML, CSS, and other frameworks, I'll be posting here.
+                        <br />
 
-</pre>
-</figure>
+                    </h2>
+                </header>
 
-<p>As you can see the .include? method and the match method effectively do the same thing. However, the value true or false is being returned for the .include? method whereas the .match method returns a MatchData object containing the match or nil, if there is no match. This is important to remember! While nil equivocates to false when used in a boolean expression, if you plan on taking the match data and assigning it to a variable, you should know that it will assign the value nil to your variable. This means that even if the match is not found, nil will be added to your variable. Do not let this scare you, because regexes are actually super awesome!</p>
+                <p>This blog started out as a simple project for Dev Bootcamp, but I have reworked and edited it to showcase my talents, discuss cultural issues within tech, and some informative Ruby tutorials.</p>
 
-<h3>Starting Your Regex</h3>
+                <footer>
+                    <a href="#blog_post" class="button scrolly">Blog Posts</a>
+                </footer>
 
-<p>The two slashes, //, signify the beginning and end of the regex that your are defining. All characters that you want identified should go in between the slashes.</p>
+            </div>
+        </section>
 
-<h3>Building Your Regex</h3>
+        <!-- Blog Posts -->
+        <section id="blog_post" class="two">
+            <div class="container">
 
-<p>All characters and numbers are taken literally.</p>
-<figure>
-<pre class="prettyprint linenums" style="font-size: 1em;">
-
-/abc123/ == &quot;abc123&quot;
-
-</pre>
-</figure>
-
-<p>The backslash is used with special characters, which tells the regex parser that it should read the character as is with no &quot;special&quot; connotation attached.</p>
-<figure>
-<pre class="prettyprint linenums" style="font-size: 1em;">
-
-/who\?/ == &quot;who?&quot; 
-
-</pre>
-</figure>
-
-<p>These are the special characters for the regex parser: ^ $ ? . / \ [ ] { } ( ) + * </p>
-
-<p>The dot(.) character is know as the wild card character. This means it will return any character in that position.</p>
-
-<p>/.ello/ could return either &quot;Jello&quot;, &quot;hello&quot;, &quot;9ello&quot;, or even &quot;!ello&quot;.</p>
-
-<p>If the string you are matching is &quot;Othello&quot; and the regex is /.ello/ the Match Data object returned will be &quot;hello&quot;, because that is exactly what you asked the regex parser to search for.</p>
-
-<p>A bracket notation allows you to control which set of characters should be in a specific location of your regex.
-&quot;hello&quot;.match(/[jh]ello/) will  return the Match Data object &quot;hello&quot;,
-&quot;jello&quot;.match(/[jh]ello/) will return the Match Data object &quot;jello&quot;.</p>
-
-<p>You can also specify if you would like any letter of the alphabet or integer with the following notation:<br>
-/[a-z]/ matches any lowercase alphabet letter.<br>
-/[A-Z]/ matches any uppercase alphabet letter.<br>
-/[A-z]/ matches any single alphabet letter.<br>
-/[0-9]/ or /\d/ will both match any integer.<br>
-/[A-z0-9_]/ or /\w/ will both match any character, digit, or underscore.
-</p>
-
-<h3>Identifying Multiple Words</h3>
-
-<p>So far we&#39;ve identified a simplified way to find singular characters or simple strings, but now we&#39;ll move onto identifying and saving multiple words into a Match Data object.</p>
-
-<p>Let&#39;s say you have a document filled with client names. They follow the style of Mr. or Mrs. first_name last_name. We know each portion of the substring is separated by a space meaning our regex should look like this: /Mrs?. [A-z]+ [A-z]+/</p>
-
-<p>The &quot;?&quot; special character following the &quot;s&quot;, let&#39;s the regex parser know that the s character may or may not be there. The &quot;+&quot; sign is a special character which captures all continuous characters which match the characters designated between the brackets preceding it.</p>
-
-<figure>
-<pre class="prettyprint linenums" style="font-size: 1em;">
-
-p &quot;Mr. Sebastian Radloff&quot;.match(/Mrs?. [A-z]+ [A-z]+/)
-# => MatchData &quot;Mr. Sebastian Radloff&quot;
-
-</pre>
-</figure>
-
-<p>If we include parentheses around each section of the regex and save the Match Data object to a variable, we can individually manipulate the data.</p>
-
-<figure>
-<pre class="prettyprint linenums" style="font-size: 1em;">
-
-name = &quot;Mr. Sebastian Radloff&quot;.match(/(Mrs?.) ([A-z]+) ([A-z]+)/)
-
-p name[0]
-# => MatchData &quot;Mr. Sebastian Radloff&quot;
-p name[1]
-# => MatchData &quot;Mr.&quot;
-p name[2]
-# => MatchData &quot;Sebastian&quot;
-p name[3]
-# => MatchData &quot;Radloff&quot;
-
-</pre>
-</figure>
-
-<p>It is important to note that name[0] returns the whole Match Data objects, which is unlike the array indexing most of us are familiar with. I hope this basic regex explanation can help you understand the complexities of the regex class. If you want to learn more about regex and Ruby, I cannot recommend the <a href="http://www.manning.com/black2/">Well Grounded Rubyist</a> enough.</p>
+                <header>
+                    <h2>Blog Posts</h2>
+                </header>
 
 
 
-<a id="original" href="./blog-posts/week8_technical.html"><br>Read the post in its original formatting</a>
+                <div class="row">
+                    <div class="4u">
+                        <article class="item">
+                            <a href="blog-posts/week9_cultural.html" class="image full">
+                                <img src="http://www.politicspa.com/wp-content/uploads/2013/07/Silhouette-question-mark.jpeg" alt="" />
+                            </a>
+                            <header>
+                                <h3>Cultural Blog Week 9: How to Get Your Questions Answered</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="blog-posts/week7_technical.html" class="image full">
+                                <img src="http://crackaninterview.com/wp-content/uploads/2014/03/SQL-Queries-Interview-Questions-and-Answers.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>Tech Blog Week 7: SQL Injections and Sanitizing Your Data</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="4u">
+                        <article class="item">
+                            <a href="blog-posts/week8_cultural.html" class="image full">
+                                <img src="http://gailbrenner.com/wp-content/uploads/openness.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>Cultural Blog Week 8: Brevity and Openness in the Workplace</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="all_posts.html" class="image full">
+                                <img src="images/archive.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>Blog Archive</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="4u">
+                        <article class="item">
+                            <a href="blog-posts/week8_technical.html" class="image full">
+                                <img src="http://www.networkintellect.com/wp-content/uploads/2012/10/reg_exp.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>Tech Blog Week 8: The Basics of Regular Expressions</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="blog-posts/week7_cultural.html" class="image full">
+                                <img src="http://visionpointmarketing.com/images/blog/What_do_you_stand_for.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>Cultural Blog Week 7: What do I value?</h3>
+                            </header>
+                        </article>
+                    </div>
+                </div>
 
-</div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section id="portfolio" class="two">
+            <div class="container">
+
+                <header>
+                    <h2>Portfolio</h2>
+                </header>
+
+                <p>Here are several web apps in which I was a significant contributor or created completely on my own.</p>
+
+                <div class="row">
+                    <div class="4u">
+                        <article class="item">
+                            <a href="http://ineedchemicalx.deviantart.com/art/A-million-suns-384369739" class="image full">
+                                <img src="images/pic02.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>App 1</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="http://ineedchemicalx.deviantart.com/art/Mind-is-a-clear-stage-375431607" class="image full">
+                                <img src="images/pic03.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>App 2</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="4u">
+                        <article class="item">
+                            <a href="http://ineedchemicalx.deviantart.com/art/You-really-got-me-345249340" class="image full">
+                                <img src="images/pic04.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>App 3</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="http://ineedchemicalx.deviantart.com/art/Ad-infinitum-354203162" class="image full">
+                                <img src="images/pic05.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>App 4</h3>
+                            </header>
+                        </article>
+                    </div>
+                    <div class="4u">
+                        <article class="item">
+                            <a href="http://ineedchemicalx.deviantart.com/art/Elysium-355393900" class="image full">
+                                <img src="images/pic06.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>App 5</h3>
+                            </header>
+                        </article>
+                        <article class="item">
+                            <a href="http://ineedchemicalx.deviantart.com/art/Emperor-of-the-Stars-370265193" class="image full">
+                                <img src="images/pic07.jpg" alt="" />
+                            </a>
+                            <header>
+                                <h3>App 6</h3>
+                            </header>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about" class="three">
+            <div class="container">
+
+                <header>
+                    <h2>About Me</h2>
+                </header>
+
+                <a class="image featured">
+                    <img src="images/golden-gate.jpg" alt="" />
+                </a>
+
+                <p>While having studied Neuroscience and pre-med in college, one introduction to computer science class sparked my interest in software engineering and changed my life's path. I realized after months of toiling with learning code at night, countless cups of coffee, and several playthroughs of Kanye West's discography later, that programming is something I loved.</p>
+
+                <p>In general, I love sports, most types of music, working out, escaping to the great outdoors, and being informed. I have always had the desire and motivation to utilize my utmost effort in my work, this blog being no exception.</p>
+
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="four">
+            <div class="container">
+
+                <header>
+                    <h2>Contact</h2>
+                </header>
+
+                <p>Feel free to contact me with any questions, concerns, comments, or potential job opportunities.</p>
+
+                <form method="post" action="mailto:sradloff23@gmail.com">
+                    <div class="row half">
+                        <div class="6u">
+                            <input type="text" class="text" name="name" placeholder="Name" />
+                        </div>
+                        <div class="6u">
+                            <input type="text" class="text" name="email" placeholder="Email" />
+                        </div>
+                    </div>
+                    <div class="row half">
+                        <div class="12u">
+                            <textarea name="message" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="12u">
+                            <a href="mailto:sradloff23@gmail.com" class="button submit">Send Message</a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+
+        <!-- Copyright -->
+        <div class="copyright">
+            <p>&copy; 2014 Sebastian Radloff. All rights reserved.</p>
+            <ul class="menu">
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a>
+                </li>
+            </ul>
 
 
-	<section id="about">
-	<h2>Introduction to Sebastian Radloff</h2>
+        </div>
 
-	<p>Hey there! If you're reading this, you've come across my DevBootcamp (DBC) blog. Throughout the course I will be updating this blog with specific topics and random musings. You can expect completely unfiltered opinions and tons of spelling and grammatical errors (no spellcheck in Sublime Text 2).</p>
+    </div>
 
-	<p>A little about myself. I realized after hours of toiling with learning code on my own, countless cups of coffee, and a playthrough Kanye West's entire disography later, that programming/coding/development is something I wanted to do. There's nothing quite like the feeling of getting your code to run fluidly. Essentially, if it's 2 am and a project is due at 8 am, this is what I'd rather be doing, with a giant smile on my face.</p>
-
-	<p>In general, I love sports, all types of music, working out, a stiff drink, and being informed. You'll get to know me throughout my future posts.</p>
-
-	</section>
+    <!-- Portfolio Modals -->
 
 
 
-	
-
-	</body>
-
-	<footer>
-		<h5>&copy; 2014 Sebastian Radloff No Rights Reserved</h5>
-		<div id="info"><h5>To contact me click <a href="mailto:sradloff23@gmail.com?Subject=DBC%20Blog" target="_top">here</a></h5></div>
-	</footer>
+</body>
 
 </html>

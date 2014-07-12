@@ -1,104 +1,60 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Week 5 Tech Blog</title>
-		<link rel="stylesheet" type="text/css" href="../unit1_projects/class1/completed/stylesheets/reset.css"/>
-	    <link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css" charset="utf-8"/>
-	    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
-	    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
-	</head>
 
-<div id="background">
-<style type="text/css">
-body { background-color: #7FCA9F}
-</style>
-</div>
-
-	<body>
-		<header>
-			<nav>
-				<ul>
-		            <li>
-		              <a href="../index.html">Home</a>
-		            </li>
-		            <li>
-		              <a href="./week7_technical.html">Tech Blog</a>
-		            </li>
-		            <li>
-		              <a href="./week7_cultural.html">Cultural Blog</a>
-		            </li>
-		            <li>
-		            	<a href="../all_posts.html">All Posts</a>
-		            </li>
-		            <li>
-		            	<a href="https://github.com/sradloff23">Portfolio</a>
-		            </li>
-	          	</ul>
-			</nav>
-
-		</header>
-	
-	<section class="left_section">
-		
-		<div id="profile">
-			<img src="./images/prof.jpg">
-			<h3>Sebastian Radloff's Blog</h3>
-			<p>Aspiring software developer currently learning Ruby, HTML, CSS, SQL, and Javascript.</p>
-		</div>
-		
-	</section>
+<head>
+    <title>Week 5 Tech Blog</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css" charset="utf-8" />
+    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+</head>
 
 
-	<section class="right_section">
-		<h2>Future: Games I created</h2>
-
-		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf'/><param name='FlashVars' value='id=40'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/logic-games/tic-tac-toe.swf' FlashVars='id=40' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
-
-		<object width='270' height='190'><param name='movie' value='http://www.proprofs.com/games/swf/sudoku/sudoku.swf'/><param name='FlashVars' value='id=26'/> <param name='allowScriptAccess' value='always'/><param name='quality' value='high'/><embed name='proprofs_flashGame' src='http://www.proprofs.com/games/swf/sudoku/sudoku.swf' FlashVars='id=26' width='430' height='300' allowScriptAccess='always' quality='high' type='application/x-shockwave-flash'></embed></object>
-	</section>
+<body>
+    <div id="close">
+        <a href="../index.html">
+            <img src="./images/close.png">
+        </a>
+    </div>
 
 
 
-<div id="text_center">
+    <div id="text_center">
 
-<h2>Learning about Classes, Instance Variables, and Instance Methods</h2>
+        <h2>Learning about Classes, Instance Variables, and Instance Methods</h2>
 
-<p>Ruby is a great language for many reasons, but an important reason is that every Ruby statement or expression evaluates to an Object. This means that every statement and expression inherits Object properties, which make Ruby such a pleasure to work with!</p>
+        <p>Ruby is a great language for many reasons, but an important reason is that every Ruby statement or expression evaluates to an Object. This means that every statement and expression inherits Object properties, which make Ruby such a pleasure to work with!</p>
 
-<p>A class in Ruby is defined as a basic template from which object instances are created, allowing one to represent internal state and behavior methods operating on that state. Basically, we create Ruby classes to model something that has several different behaviors. A real life example I&#39;d like to present to you today is that of a coffee maker.</p>
+        <p>A class in Ruby is defined as a basic template from which object instances are created, allowing one to represent internal state and behavior methods operating on that state. Basically, we create Ruby classes to model something that has several different behaviors. A real life example I&#39;d like to present to you today is that of a coffee maker.</p>
 
-<img src="./images/week_5_tech_blog/class_pic.jpg" style="width: 50%">
+        <img src="./images/week_5_tech_blog/class_pic.jpg" style="width: 50%">
 
-<p>As you can see, the ruby syntax for a class is relatively simple.</p>
+        <p>As you can see, the ruby syntax for a class is relatively simple.</p>
 
-<p>Now let&#39;s say our coffee maker needs a few inherent properties such as a name, it&#39;s beans level, and water level. These are not behaviors, but properties that a coffee maker has which are needed for later behaviors. These properties are stored as instance variables, meaning instance variables are variables pertaining to a particular object, lasting the complete life of the object. </p>
+        <p>Now let&#39;s say our coffee maker needs a few inherent properties such as a name, it&#39;s beans level, and water level. These are not behaviors, but properties that a coffee maker has which are needed for later behaviors. These properties are stored as instance variables, meaning instance variables are variables pertaining to a particular object, lasting the complete life of the object.</p>
 
-<img src="./images/week_5_tech_blog/initialize_pic.jpg">
+        <img src="./images/week_5_tech_blog/initialize_pic.jpg">
 
-<p>As you can see the proper way for creating instance variables, is to define an instance method which takes the variables you eventually want as instance variables, as arguments. Here, we take the name of the coffee maker and add it to the instance variable @name. The &quot@&quot symbol is used as the notation for an instance variable, and must be placed in the first position of the variable name. We also initialized to other variables, @beans and @water, to equal 100. This is going to represent the percentage of beans and water level throughout the object&#39;s life.</p>
+        <p>As you can see the proper way for creating instance variables, is to define an instance method which takes the variables you eventually want as instance variables, as arguments. Here, we take the name of the coffee maker and add it to the instance variable @name. The &quot@&quot symbol is used as the notation for an instance variable, and must be placed in the first position of the variable name. We also initialized to other variables, @beans and @water, to equal 100. This is going to represent the percentage of beans and water level throughout the object&#39;s life.</p>
 
-<p>What should our coffee maker do? Make coffee of course! Let&#39;s say we want to make an espresso or black coffee as our drink options. We will create two methods: one named black and the other named espresso. These methods are instance methods, because they are accessed by an object of the class, and use or work on that object, expressing object behaviors. The black method, will make us black coffee by subtracting 20 from both the @water and @beans instance variables respectively, and return a string which let&#39;s us know our delicious coffee is ready. The espresso method, will make us an espresso by subtracting 10 and 30 from the @water and @beans instance variables, and return a string letting us know our espresso is ready. These methods are instance methods, because the object calls them directly using the dot operator.</p>
+        <p>What should our coffee maker do? Make coffee of course! Let&#39;s say we want to make an espresso or black coffee as our drink options. We will create two methods: one named black and the other named espresso. These methods are instance methods, because they are accessed by an object of the class, and use or work on that object, expressing object behaviors. The black method, will make us black coffee by subtracting 20 from both the @water and @beans instance variables respectively, and return a string which let&#39;s us know our delicious coffee is ready. The espresso method, will make us an espresso by subtracting 10 and 30 from the @water and @beans instance variables, and return a string letting us know our espresso is ready. These methods are instance methods, because the object calls them directly using the dot operator.</p>
 
-<img src="./images/week_5_tech_blog/drink_methods.jpg" style="width: 100%">
+        <img src="./images/week_5_tech_blog/drink_methods.jpg" style="width: 100%">
 
-<p>Now, we make a few drinks and we want to check how much water and beans our coffee maker has left. We built two additional methods, check_water_level and check_beans_level, to return strings telling the user how much of each is remaining. If we see that the water or beans levels are low, we should probably refill them. Therefore, we create two more methods, add_beans and add_water, which fill the water and beans levels back to 100.</p>
+        <p>Now, we make a few drinks and we want to check how much water and beans our coffee maker has left. We built two additional methods, check_water_level and check_beans_level, to return strings telling the user how much of each is remaining. If we see that the water or beans levels are low, we should probably refill them. Therefore, we create two more methods, add_beans and add_water, which fill the water and beans levels back to 100.</p>
 
-<img src="./images/week_5_tech_blog/check_levls.jpg" style="width: 100%">
+        <img src="./images/week_5_tech_blog/check_levls.jpg" style="width: 100%">
 
-<p>We seem to have thought of everything right? We can check how much water and beans there are left, we can add water and beans, and we can even create two drinks. However, we currently do not have anything preventing us from creating drinks if the water and beans levels are below the requirements necessary to make the drink being called. The water and beans level will simply become negative! All we need are two simple conditional statements. The first making sure the coffee maker has enough water and beans to make our drink and the second is the procedure we previously wrote for our drink method.</p>
+        <p>We seem to have thought of everything right? We can check how much water and beans there are left, we can add water and beans, and we can even create two drinks. However, we currently do not have anything preventing us from creating drinks if the water and beans levels are below the requirements necessary to make the drink being called. The water and beans level will simply become negative! All we need are two simple conditional statements. The first making sure the coffee maker has enough water and beans to make our drink and the second is the procedure we previously wrote for our drink method.</p>
 
-<img src="./images/week_5_tech_blog/full_pic.jpg" style="width: 100%">
-<img src="./images/week_5_tech_blog/calls.jpg" style="width: 100%">
+        <img src="./images/week_5_tech_blog/full_pic.jpg" style="width: 100%">
+        <img src="./images/week_5_tech_blog/calls.jpg" style="width: 100%">
 
-<p>That&#39;s all it takes to create a basic model of a real life object using class, instance variables, and objects.</p>
-</div>
-	
+        <p>That&#39;s all it takes to create a basic model of a real life object using class, instance variables, and objects.</p>
+    </div>
 
-	</body>
 
-	<footer>
-		<h5>&copy; 2014 Sebastian Radloff No Rights Reserved</h5>
-		<div id="info"><h5>To contact me click <a href="mailto:sradloff23@gmail.com?Subject=DBC%20Blog" target="_top">here</a></h5></div>
-	</footer>
+</body>
+
 
 </html>
