@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Customizing Your Terminal</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/blog_template.css" charset="utf-8" />
+    <link href="http://fonts.googleapis.com/css?family=Audiowide|Quicksand:300,400,700|Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sunburst"></script>
+</head>
+
+<div id="close"> 
+<a href="../index.html#blog_post"><img src="./images/close.png"></a>
+</div>
+
+<body>
+
+    <div id="text_center">
+
+        <h1>An Easy Guide to Setting up Your Terminal</h1>
+
+        <h2>Cohort: Bobolinks, Chicago, July 2014</h2>
+
+        <img src="./images/p1_2/terminal.png" width="100%" height="100%">
+
+        <p>I&#39;ve seen several great terminal setups but this <a href="http://remysharp.com/2013/07/25/my-terminal-setup/">one</a> by Remy Sharp was my favorite. I was all excited to set up my new terminal, but I kept running into issues throughout the process. Being relatively new to the command line, it would have been great to have a step-by-step tutorial for customizing my terminal. I decided to write that tutorial here.</p>
+
+        <p>The first step is to download <a href="http://iterm2.com/downloads.html">iTerm 2</a> iTerm is highly customizeable, offers the cmd+f option like in Chrome, and much <a href="http://apple.stackexchange.com/questions/25143/what-is-the-difference-between-iterm2-and-terminal">more</a>.</p>
+
+        <p>Once you&#39;ve downloaded iTerm and installed any updates, you should download the <a href="https://gist.github.com/qrush/1595572#file-inconsolata-dz-powerline-otf">Inconsolata Powerline font</a>, by clicking the raw button on the right hand side. Once the file has downloaded, double click to open it, which should automatically open it in Font Book. Click &#39;Install Font&#39; in the bottom right corner of the window. Open &#39;iTerm Preferences&#39; => &#39;Profiles&#39; => &#39;Text&#39;, and change the &#39;Regular Font&#39; to &#39;Inconsolata-dz for Powerline&#39; and size 15. Keep iTerm open.</p>
+
+        <p>Now we&#39;ll download the Solarized Dark theme <a href="https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors">here</a>. Ctrl + click and save the file to your Desktop. In iTerm Preferences, switch to the &#39;Colors&#39; tab and click the &#39;Load Presets&#39; dropdown. Select &#39;Import&#39;,  and find the downloaded Solarized Dark theme file. Click on the &#39;Load Presets&#39; button once again and select the Solarized Dark theme. If you open up a new iTerm window, the background should be dark blue.</p>
+
+        <p>Continuing in the &#39;Colors&#39; tab, uncheck the &#39;Smart cursor color&#39; box and click on the colored box next to &#39;Cursor&#39;. Set the color using &#39;Color Sliders&#39; => &#39;RGB Sliders&#39; to 209, 58, and 138.</p>
+
+        <p>Next you&#39;ll need to download &#39;oh-my-zsh&#39;, which is responsible for managing multiple themes and skins for your terminal. You can download it from the command line by copying and pasting &#39;curl -L http://install.ohmyz.sh | sh&#39; OR &#39;wget --no-check-certificate http://install.ohmyz.sh -O - | sh&#39; . Either set of commands should work. </p>
+
+        <p>Go to the users section on your Mac (open a Finder window and click on the house icon with presumably your name next to it). You may or may not have hidden files set as invisible. If you see a “dim” version of a &#39;.oh-my-zsh&#39; older, your hidden files are visible. If not, you should copy and paste the following commands in your terminal to make those files visible: &#39;defaults write com.apple.finder AppleShowAllFiles TRUE&#39;,press enter, then &#39;killall Finder&#39;.You can reverse this process after this tutorial by typing &#39;defaults write com.apple.finder AppleShowAllFiles FALSE&#39;, press enter, then &#39;killall Finder&#39;.</p>
+
+        <p>Right click on <a href="https://gist.githubusercontent.com/remy/6079223/raw/d3ae2b0141ceae667e11ab4a0c2db0e0e9b3317b/remy.zsh-theme ">Remy&#39;s customized agnoster skin</a>, and save the file to your Desktop. Right click the downloaded file and select &#39;Get Info&#39;. Go to the &#39;Name & Extension&#39; section and delete the &#39;.txt&#39; extension from the file name. A window should pop up asking if you&#39;re sure you would like to use the &#39;.zsh-theme&#39;, which you should click. Make a note of the file name.</p>
+
+        <p>Now locate the &#39;.oh-my-zsh&#39; folder and navigate your way to the &#39;themes&#39; folder. Drag Remy&#39;s customized agnoster skin file into the &#39;themes&#39; folder.</p>
+
+        <p>Going back out to your user tab in Finder (the one with the house), locate the &#39;.zshrc&#39; file. Right click the file and open it with Sublime. Look for &#39;ZSH_THEME&#39;, should be on line 8, and set the variable that&#39;s in between string to &quotremy&quot. This sets the theme of to the skin you downloaded and placed into the themes folder. If you want to switch to any other theme, simply add the name of the skin, minus the extension, into between strings in the &#39;ZSH_THEME&#39; variable. Once set, save the file and close it.</p>
+
+        <p>Now go back to the user tab in Finder and search for your &#39;bin&#39; folder. If you do not have a &#39;bin&#39; folder in your User tab, you can simply add a new folder and name it &#39;bin&#39;. You&#39;ll want to download <a href="https://gist.githubusercontent.com/remy/6079223/raw/18509da5ef3c2b55c52300f8ae64b2b0428d4234/batcharge.py">this file</a> by right clicking and saving the file in your &#39;bin&#39; folder. This file will show you how much battery you have left in your terminal, and is necessary to run the theme properly. Open up a terminal window to see if you have the proper permissions. Navigate to your &#39;bin&#39;, &#39;cd bin&#39;, and then run &#39;ls -l&#39;. You should now enter &#39;chmod +rwx batcharge.py&#39; to change the file mode and its permission to run. You also need to open up the &#39;batcharge.py&#39; file in Sublime. Copy the line &#39;# coding=UTF-8&#39; and paste it after the &#39;#!/usr/bin/env python&#39; on the first line, meaning you should have the same code twice.</p>
+
+        <p>Open up a new iTerm window and that should be it! I hope you found this tutorial informative and easy to follow.</p>
+
+    </div>
+
+
+</body>
+
+
+</html>
